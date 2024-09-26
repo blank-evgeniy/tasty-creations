@@ -1,0 +1,10 @@
+@import "./styles/vars.scss";
+@import "./styles/mixins.scss";
+@import "./styles/reset.scss";
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  font-size: var(--font-size-m);
+}
