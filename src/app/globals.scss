@@ -8,3 +8,10 @@ body {
 
   font-size: var(--font-size-m);
 }
+
+.app {
+  padding-top: var(--navbar-height);
+  max-width: var(--container-width);
+  width: 100%;
+  margin: 0 auto;
+}

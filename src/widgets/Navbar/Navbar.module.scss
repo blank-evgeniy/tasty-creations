@@ -1,0 +1,36 @@
+.container {
+  position: absolute;
+  height: var(--navbar-height);
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 var(--p-xl);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--green-color);
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+
+.title:hover {
+  gap: 8px;
+}
+
+.navigation {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+}

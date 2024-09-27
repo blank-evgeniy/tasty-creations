@@ -1,0 +1,61 @@
+//-----color-----
+
+.primary {
+  --button-color: var(--blue-color);
+  --button-color-active: var(--blue-color-light);
+}
+.secondary {
+  --button-color: var(--green-color);
+  --button-color-active: var(--green-color-light);
+}
+
+//-----theme-----
+
+.default {
+  color: var(--text-color-inverted);
+  border-radius: 24px;
+  background-color: var(--button-color);
+  transition: background-color 0.3s ease-in;
+}
+
+.default:hover {
+  background-color: var(--button-color-active);
+}
+
+.clear {
+  color: none;
+  border: none;
+  color: var(--button-color);
+}
+
+.clear:hover {
+  border-bottom: 2px solid var(--button-color);
+}
+
+//-----size-----
+.clear.small {
+  font-size: var(--font-size-s);
+}
+
+.clear.medium {
+  font-size: var(--font-size-m);
+}
+
+.clear.large {
+  font-size: var(--font-size-l);
+}
+
+.default.small {
+  font-size: var(--font-size-s);
+  padding: 6px 12px;
+}
+
+.default.medium {
+  font-size: var(--font-size-m);
+  padding: 10px 18px;
+}
+
+.default.large {
+  font-size: var(--font-size-l);
+  padding: 14px 22px;
+}

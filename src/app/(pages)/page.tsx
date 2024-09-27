@@ -1,5 +1,5 @@
 import styles from "./page.module.scss";
 
 export default function Home() {
-  return <div className={styles.page}>Tasty Creations</div>;
+  return <div className={styles.page}>Main</div>;
 }

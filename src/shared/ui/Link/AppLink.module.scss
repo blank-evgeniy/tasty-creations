@@ -1,0 +1,15 @@
+.default {
+  color: var(--green-color);
+}
+
+.button {
+  color: var(--text-color-inverted);
+  padding: 10px 18px;
+  border-radius: 24px;
+  background-color: var(--blue-color);
+  transition: background-color 0.3s ease-in;
+}
+
+.button:hover {
+  background-color: var(--blue-color-light);
+}
