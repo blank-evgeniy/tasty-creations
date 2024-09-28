@@ -1,0 +1,56 @@
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin-top: 60px;
+}
+
+.hero_image {
+  object-fit: contain;
+  max-height: calc(100vh - var(--navbar-height) - 80px);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-bottom: 40px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+
+  padding-bottom: 12px;
+}
+
+.paragraph {
+  text-align: center;
+  font-size: var(--font-size-l);
+}
+
+.sources {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.sources_title {
+  font-size: var(--font-size-l);
+  font-weight: 600;
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+}
