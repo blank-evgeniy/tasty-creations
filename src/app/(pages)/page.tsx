@@ -3,6 +3,9 @@ import styles from "./page.module.scss";
 import HeroImage from "@/shared/assets/illustrations/hero.png";
 import Button, { ButtonColor, ButtonSize } from "@/shared/ui/Button/Button";
 import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
+import GithubIcon from "@/shared/assets/icons/github.svg";
+import PersonIcon from "@/shared/assets/icons/circle-user-round.svg";
+import EducationIcon from "@/shared/assets/icons/graduation-cap.svg";
 
 export default function Home() {
   return (
@@ -36,21 +39,31 @@ export default function Home() {
         <div className={styles.sources}>
           <h2 className={styles.sources_title}>Ссылки</h2>
           <div className={styles.links}>
-            <AppLink theme={LinkTheme.BUTTON} href="" target="_blank">
+            <AppLink
+              withIcon
+              theme={LinkTheme.BUTTON}
+              href="https://github.com/blank-evgeniy/tasty-creations"
+              target="_blank"
+            >
+              <GithubIcon />
               GitHub
             </AppLink>
             <AppLink
+              withIcon
               theme={LinkTheme.BUTTON}
               href="https://blankevgeniy.vercel.app/"
               target="_blank"
             >
+              <PersonIcon />
               Blanke
             </AppLink>
             <AppLink
+              withIcon
               theme={LinkTheme.BUTTON}
               href="https://klgtu.ru/"
               target="_blank"
             >
+              <EducationIcon />
               КГТУ
             </AppLink>
           </div>

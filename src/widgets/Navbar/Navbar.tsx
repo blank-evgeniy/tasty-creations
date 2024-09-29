@@ -2,7 +2,6 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./Navbar.module.scss";
 import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
 import AppIcon from "@/shared/assets/icons/app-icon.svg";
-import Image from "next/image";
 import Button, { ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button";
 import Link from "next/link";
 
@@ -14,13 +13,13 @@ const Navbar = ({ className }: NavbarProps) => {
   return (
     <header className={classNames(styles.container, {}, [className])}>
       <Link className={styles.title} href="/">
-        <Image src={AppIcon} alt="app icon" width={32} height={32} />
+        <AppIcon />
         Tasty Creations
       </Link>
       <nav className={styles.navigation}>
         <ul className={styles.links}>
           <li className={styles.link}>
-            <AppLink theme={LinkTheme.BUTTON} href={"/"}>
+            <AppLink theme={LinkTheme.BUTTON} href={"/categories"}>
               Категории
             </AppLink>
           </li>

@@ -21,6 +21,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonTheme;
   size?: ButtonSize;
   color?: ButtonColor;
+  withIcon?: boolean;
 }
 
 const Button = ({
@@ -28,12 +29,13 @@ const Button = ({
   theme = ButtonTheme.DEFAULT,
   size = ButtonSize.M,
   color = ButtonColor.PRYMARY,
+  withIcon = false,
   children,
   ...otherProps
 }: ButtonProps) => {
   return (
     <button
-      className={classNames(styles.link, {}, [
+      className={classNames(styles.link, { [styles.withIcon]: withIcon }, [
         className,
         styles[theme],
         styles[size],

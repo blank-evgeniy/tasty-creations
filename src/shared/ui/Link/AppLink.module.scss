@@ -13,3 +13,9 @@
 .button:hover {
   background-color: var(--blue-color-light);
 }
+
+.withIcon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

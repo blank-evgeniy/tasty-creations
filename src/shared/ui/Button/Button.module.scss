@@ -59,3 +59,9 @@
   font-size: var(--font-size-l);
   padding: 14px 22px;
 }
+
+.withIcon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
