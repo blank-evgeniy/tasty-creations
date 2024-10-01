@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import "../globals.scss";
 import Navbar from "@/widgets/Navbar/Navbar";
+import Transition from "@/shared/animations/Transition/Transition";
+import "../globals.scss";
+import PageReveal from "@/shared/animations/PageReveal/PageReveal";
 
 const roboto = Roboto({ weight: "400", subsets: ["cyrillic"] });
 
@@ -19,7 +21,10 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${roboto.className}`}>
         <Navbar />
-        <div className="app">{children}</div>
+        <Transition />
+        <PageReveal>
+          <div className="app">{children}</div>
+        </PageReveal>
       </body>
     </html>
   );
