@@ -1,9 +1,10 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
-import styles from "./Navbar.module.scss";
-import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
+import Link from "next/link";
 import AppIcon from "@/shared/assets/icons/app-icon.svg";
 import Button, { ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button";
-import Link from "next/link";
+import Navigation from "@/shared/ui/Navigation/Navigation";
+
+import styles from "./Navbar.module.scss";
 
 interface NavbarProps {
   className?: string;
@@ -16,25 +17,7 @@ const Navbar = ({ className }: NavbarProps) => {
         <AppIcon />
         Tasty Creations
       </Link>
-      <nav className={styles.navigation}>
-        <ul className={styles.links}>
-          <li className={styles.link}>
-            <AppLink theme={LinkTheme.BUTTON} href={"/categories"}>
-              Категории
-            </AppLink>
-          </li>
-          <li className={styles.link}>
-            <AppLink theme={LinkTheme.BUTTON} href={"/"}>
-              Рецепты
-            </AppLink>
-          </li>
-          <li className={styles.link}>
-            <AppLink theme={LinkTheme.BUTTON} href={"/"}>
-              Что приготовить?
-            </AppLink>
-          </li>
-        </ul>
-      </nav>
+      <Navigation />
       <Button theme={ButtonTheme.CLEAR} size={ButtonSize.L}>
         Войти
       </Button>

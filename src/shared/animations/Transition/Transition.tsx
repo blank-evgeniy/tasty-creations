@@ -1,9 +1,10 @@
 "use client";
-import styles from "./Transition.module.scss";
-import AppIcon from "@/shared/assets/icons/app-icon.svg";
 
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { MotionBanner } from "@/widgets/Banner/Banner";
+import { AnimatePresence, Variants } from "framer-motion";
 import { usePathname } from "next/navigation";
+
+import styles from "./Transition.module.scss";
 
 const transitionAnimation: Variants = {
   initial: { top: "0%" },
@@ -23,15 +24,12 @@ const Transition = () => {
     <AnimatePresence mode="wait">
       <div key={pathname}>
         <div className={styles.container}>
-          <motion.div
-            className={styles.transition}
+          <MotionBanner
             variants={transitionAnimation}
             initial="initial"
             animate="animate"
             exit="exit"
-          >
-            <AppIcon width={48} height={48} />
-          </motion.div>
+          />
         </div>
       </div>
     </AnimatePresence>
