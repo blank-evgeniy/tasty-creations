@@ -19,5 +19,5 @@ export const Banner = forwardRef<HTMLDivElement, BannerProps>(function Banner(
   );
 });
 
-export const MotionBanner = motion(Banner);
+export const MotionBanner = motion.create(Banner);
 export default Banner;

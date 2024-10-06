@@ -1,0 +1,37 @@
+.card {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  background-color: var(--green-color);
+  color: var(--text-color);
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+  &:hover,
+  &:focus {
+    outline: 4px solid var(--green-color);
+    outline-offset: 2px;
+  }
+}
+
+.image {
+  padding: 6px;
+  border-radius: 20px;
+}
+
+.card__content {
+  padding: 16px;
+}
+
+.name {
+  font-size: var(--font-size-l);
+  text-align: center;
+}

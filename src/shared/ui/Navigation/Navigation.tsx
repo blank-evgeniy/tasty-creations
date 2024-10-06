@@ -14,7 +14,7 @@ interface NavLink {
 
 const NavLinks: NavLink[] = [
   { href: "/categories", title: "Категории" },
-  { href: "/recipes", title: "Рецепты" },
+  { href: "/menu", title: "Рецепты" },
   { href: "/random", title: "Что приготовить?" },
 ];
 

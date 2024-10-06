@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import HeroImage from "@/shared/assets/illustrations/hero.png";
+import HeroImage from "@/shared/assets/pictures/hero.png";
 import Button, { ButtonColor, ButtonSize } from "@/shared/ui/Button/Button";
 import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
 import GithubIcon from "@/shared/assets/icons/github.svg";
@@ -8,6 +8,9 @@ import PersonIcon from "@/shared/assets/icons/circle-user-round.svg";
 import EducationIcon from "@/shared/assets/icons/graduation-cap.svg";
 import Reveal from "@/shared/animations/Reveal/Reveal";
 import TextReveal from "@/shared/animations/TextReveal/TextReveal";
+import { Merriweather } from "next/font/google";
+
+const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
 export default function Home() {
   return (
@@ -21,7 +24,7 @@ export default function Home() {
       </Reveal>
       <main className={styles.content}>
         <div className={styles.about}>
-          <h1 className={styles.title}>
+          <h1 className={`${merriweather.className} ${styles.title}`}>
             <TextReveal text="Tasty Creations - твой кулинарный проводник" />
           </h1>
 

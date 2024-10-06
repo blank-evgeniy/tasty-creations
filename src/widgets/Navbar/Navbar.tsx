@@ -3,8 +3,11 @@ import Link from "next/link";
 import AppIcon from "@/shared/assets/icons/app-icon.svg";
 import Button, { ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button";
 import Navigation from "@/shared/ui/Navigation/Navigation";
+import { Merriweather } from "next/font/google";
 
 import styles from "./Navbar.module.scss";
+
+const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
 interface NavbarProps {
   className?: string;
@@ -12,7 +15,12 @@ interface NavbarProps {
 
 const Navbar = ({ className }: NavbarProps) => {
   return (
-    <header className={classNames(styles.container, {}, [className])}>
+    <header
+      className={classNames(styles.container, {}, [
+        className,
+        merriweather.className,
+      ])}
+    >
       <Link className={styles.title} href="/">
         <AppIcon />
         Tasty Creations

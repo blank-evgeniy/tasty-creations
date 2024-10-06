@@ -35,7 +35,7 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={classNames(styles.link, { [styles.withIcon]: withIcon }, [
+      className={classNames(styles.button, { [styles.withIcon]: withIcon }, [
         className,
         styles[theme],
         styles[size],
