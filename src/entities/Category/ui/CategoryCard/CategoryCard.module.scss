@@ -4,8 +4,8 @@
 
   height: 100%;
 
-  background-color: var(--green-color);
-  color: var(--text-color);
+  background-color: var(--main-color);
+  color: var(--text-color-inverted);
 
   overflow: hidden;
 
@@ -17,7 +17,7 @@
 
   &:hover,
   &:focus {
-    outline: 4px solid var(--green-color);
+    outline: 3px solid var(--main-color);
     outline-offset: 2px;
   }
 }

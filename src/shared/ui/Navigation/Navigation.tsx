@@ -1,5 +1,5 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
-import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
+import NavLink from "../NavLink/NavLink";
 
 import styles from "./Navigation.module.scss";
 
@@ -7,12 +7,12 @@ interface NavigationProps {
   className?: string;
 }
 
-interface NavLink {
+interface NavigationLink {
   href: string;
   title: string;
 }
 
-const NavLinks: NavLink[] = [
+const NavLinks: NavigationLink[] = [
   { href: "/categories", title: "Категории" },
   { href: "/menu", title: "Рецепты" },
   { href: "/random", title: "Что приготовить?" },
@@ -24,9 +24,7 @@ const Navigation = ({ className }: NavigationProps) => {
       <ul className={styles.links}>
         {NavLinks.map((link) => (
           <li key={link.href}>
-            <AppLink theme={LinkTheme.BUTTON} href={link.href}>
-              {link.title}
-            </AppLink>
+            <NavLink href={link.href}>{link.title}</NavLink>
           </li>
         ))}
       </ul>
