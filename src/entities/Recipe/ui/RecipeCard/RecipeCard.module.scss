@@ -1,0 +1,36 @@
+.recipe_card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--main-color);
+  border-radius: 16px;
+
+  padding: 16px;
+}
+
+.icon_wrapper {
+  color: var(--text-color-inverted);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  gap: 32px;
+}
+
+.info {
+  display: flex;
+  gap: 16px;
+}
+
+.name {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
