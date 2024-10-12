@@ -1,11 +1,13 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
 import HeroImage from "@/shared/assets/pictures/hero.png";
-import Button, { ButtonColor, ButtonSize } from "@/shared/ui/Button/Button";
-import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
+import AppLink, {
+  LinkColor,
+  LinkSize,
+  LinkTheme,
+} from "@/shared/ui/Link/AppLink";
 import GithubIcon from "@/shared/assets/icons/github.svg";
 import PersonIcon from "@/shared/assets/icons/circle-user-round.svg";
-import EducationIcon from "@/shared/assets/icons/graduation-cap.svg";
 import Reveal from "@/shared/animations/Reveal/Reveal";
 import TextReveal from "@/shared/animations/TextReveal/TextReveal";
 import { Merriweather } from "next/font/google";
@@ -48,9 +50,14 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={1.4}>
-            <Button color={ButtonColor.SECONDARY} size={ButtonSize.L}>
+            <AppLink
+              theme={LinkTheme.BUTTON}
+              color={LinkColor.SECONDARY}
+              size={LinkSize.L}
+              href="/categories"
+            >
               Начать готовить!
-            </Button>
+            </AppLink>
           </Reveal>
         </div>
         <div className={styles.sources}>
@@ -73,15 +80,6 @@ export default function Home() {
               >
                 <PersonIcon />
                 Blanke
-              </AppLink>
-              <AppLink
-                withIcon
-                theme={LinkTheme.BUTTON}
-                href="https://klgtu.ru/"
-                target="_blank"
-              >
-                <EducationIcon />
-                КГТУ
               </AppLink>
             </div>
           </Reveal>

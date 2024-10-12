@@ -1,10 +1,9 @@
-// pictures
-import MainDishtImage from "@/shared/assets/pictures/main.jpg";
-import SoupImage from "@/shared/assets/pictures/soup.jpg";
-import SaladImage from "@/shared/assets/pictures/salad.jpg";
-// import DinnerImage from "@/shared/assets/pictures/dinner.jpg";
-import DrinkImage from "@/shared/assets/pictures/drink.jpg";
-import DessertImage from "@/shared/assets/pictures/dessert.jpg";
+// icons
+import MainIcon from "@/shared/assets/icons/beef.svg";
+import SoupIcon from "@/shared/assets/icons/soup.svg";
+import SaladIcon from "@/shared/assets/icons/salad.svg";
+import DrinkIcon from "@/shared/assets/icons/wine.svg";
+import DessertIcon from "@/shared/assets/icons/cherry.svg";
 
 import { Category } from "./category";
 
@@ -12,36 +11,36 @@ export const CategoriesList: Category[] = [
   //   {
   //     path: "all",
   //     name: "Все категории",
-  //     image: DesertImage,
+  //     Image: DesertImage,
   //   },
   {
     path: "main",
     name: "Основные блюда",
-    image: MainDishtImage,
+    Icon: MainIcon,
   },
   {
     path: "soups",
     name: "Супы",
-    image: SoupImage,
+    Icon: SoupIcon,
   },
   {
     path: "salads",
     name: "Салаты",
-    image: SaladImage,
+    Icon: SaladIcon,
   },
   //   {
   //     path: "dinners",
   //     name: "Завтраки",
-  //     image: DinnerImage,
+  //     Image: DinnerImage,
   //   },
   {
     path: "drinks",
     name: "Напитки",
-    image: DrinkImage,
+    Icon: DrinkIcon,
   },
   {
     path: "desserts",
     name: "Десерты",
-    image: DessertImage,
+    Icon: DessertIcon,
   },
 ];

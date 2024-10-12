@@ -1,34 +1,35 @@
 .card {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   height: 100%;
 
-  background-color: var(--main-color);
-  color: var(--text-color-inverted);
+  background-color: var(--accent-color);
+  color: var(--blue-color);
+  font-weight: 400;
 
   overflow: hidden;
 
   border-radius: 20px;
 
-  -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-  box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -webkit-box-shadow: 4px 4px 8px 0px rgba(172, 67, 1, 0.2);
+  -moz-box-shadow: 4px 4px 8px 0px rgba(172, 67, 1, 0.2);
+  box-shadow: 4px 4px 8px 0px rgba(172, 67, 1, 0.2);
 
   &:hover,
   &:focus {
-    outline: 3px solid var(--main-color);
+    outline: 3px solid var(--accent-color);
     outline-offset: 2px;
   }
 }
 
 .image {
-  padding: 6px;
-  border-radius: 20px;
+  padding: 16px 8px;
 }
 
 .card__content {
-  padding: 16px;
+  padding-bottom: 16px;
 }
 
 .name {

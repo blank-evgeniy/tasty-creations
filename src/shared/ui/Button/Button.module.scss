@@ -5,14 +5,14 @@
   --button-color-active: var(--blue-color-light);
 }
 .secondary {
-  --button-color: var(--green-color);
-  --button-color-active: var(--green-color-dark);
+  --button-color: var(--accent-color);
+  --button-color-active: var(--accent-color-dark);
 }
 
 //-----theme-----
 
 .default {
-  color: var(--text-color-inverted);
+  color: var(--main-color-inverted);
   border-radius: 24px;
   background-color: var(--button-color);
   transition: background-color 0.3s ease-in;

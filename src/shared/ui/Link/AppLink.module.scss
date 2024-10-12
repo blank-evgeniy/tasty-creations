@@ -1,11 +1,10 @@
 .default {
-  color: var(--green-color);
+  color: var(--accent-color);
 }
 
 .button {
   display: inline-block;
-  color: var(--text-color-inverted);
-  padding: 10px 18px;
+  color: var(--main-color-inverted);
   border-radius: 24px;
   background-color: var(--blue-color);
   transition: background-color 0.3s ease-in;
@@ -19,4 +18,46 @@
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+// --------sizes--------
+.small {
+  font-size: var(--font-size-s);
+}
+
+.medium {
+  font-size: var(--font-size-m);
+}
+
+.large {
+  font-size: var(--font-size-l);
+}
+
+.button.small {
+  padding: 6px 12px;
+}
+
+.button.medium {
+  padding: 10px 18px;
+}
+
+.button.large {
+  padding: 14px 22px;
+}
+
+// -------------colors-----------
+.default.secondary {
+  color: var(--blue-color);
+}
+
+.default.secondary:hover {
+  color: var(--blue-color-dark);
+}
+
+.button.secondary {
+  background-color: var(--accent-color);
+}
+
+.button.secondary:hover {
+  background-color: var(--accent-color-dark);
 }

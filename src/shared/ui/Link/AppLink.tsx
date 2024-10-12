@@ -8,9 +8,22 @@ export enum LinkTheme {
   BUTTON = "button",
 }
 
+export enum LinkColor {
+  PRYMARY = "primary",
+  SECONDARY = "secondary",
+}
+
+export enum LinkSize {
+  S = "small",
+  M = "medium",
+  L = "large",
+}
+
 interface AppLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   theme?: LinkTheme;
   withIcon?: boolean;
+  color?: LinkColor;
+  size?: LinkSize;
   href: string;
 }
 
@@ -18,6 +31,8 @@ const AppLink = ({
   className,
   href,
   theme = LinkTheme.DEFAULT,
+  color = LinkColor.PRYMARY,
+  size = LinkSize.M,
   withIcon = false,
   children,
   ...otherProps
@@ -27,6 +42,8 @@ const AppLink = ({
       className={classNames(styles.link, { [styles.withIcon]: withIcon }, [
         className,
         styles[theme],
+        styles[color],
+        styles[size],
       ])}
       href={href}
       {...otherProps}

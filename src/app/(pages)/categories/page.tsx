@@ -4,6 +4,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import Reveal from "@/shared/animations/Reveal/Reveal";
 import { CategoriesList, CategoryCard } from "@/entities/Category";
 import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
+import MoveRightIcon from "@/shared/assets/icons/move-right.svg";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
@@ -22,7 +23,7 @@ export default function Categories() {
 
       <Reveal delay={0.2}>
         <h2 className={styles.subtitle}>
-          Выберите, рецепты какой категории вы желаете найти
+          Выберите рецепты какой категории вы хотите найти
         </h2>
       </Reveal>
 
@@ -33,7 +34,7 @@ export default function Categories() {
       <Reveal delay={0.8}>
         <div className={styles.link_section}>
           <h2 style={{ display: "inline" }} className={styles.subtitle}>
-            Либо перейдите к списку всех рецептов
+            Или перейдите к списку всех рецептов
           </h2>
 
           <AppLink
@@ -42,8 +43,8 @@ export default function Categories() {
             className={styles.button}
           >
             <div className={styles.button_content}>
-              <span>{"->"}</span>
-              <p>все рецепты</p>
+              <MoveRightIcon />
+              <p>Все рецепты</p>
             </div>
           </AppLink>
         </div>

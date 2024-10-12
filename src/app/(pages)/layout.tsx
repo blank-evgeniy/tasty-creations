@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Lora } from "next/font/google";
 import Navbar from "@/widgets/Navbar/Navbar";
 import Transition from "@/shared/animations/Transition/Transition";
-import "../globals.scss";
 import PageReveal from "@/shared/animations/PageReveal/PageReveal";
 
-const roboto = Roboto({ weight: "400", subsets: ["cyrillic"] });
+import "../globals.scss";
+
+const lora = Lora({ weight: "400", subsets: ["cyrillic"] });
 
 export const metadata: Metadata = {
   title: "Tasty Creations",
@@ -19,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${roboto.className}`}>
+      <body className={`${lora.className}`}>
         <Navbar />
         <Transition />
         <PageReveal>
