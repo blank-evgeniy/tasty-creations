@@ -1,11 +1,10 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
-import Link from "next/link";
 import AppIcon from "@/shared/assets/icons/app-icon.svg";
-import Button, { ButtonSize, ButtonTheme } from "@/shared/ui/Button/Button";
 import Navigation from "@/shared/ui/Navigation/Navigation";
 import { Merriweather } from "next/font/google";
 
 import styles from "./Navbar.module.scss";
+import AppLink, { LinkSize } from "@/shared/ui/Link/AppLink";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
@@ -21,14 +20,14 @@ const Navbar = ({ className }: NavbarProps) => {
         merriweather.className,
       ])}
     >
-      <Link className={styles.title} href="/">
+      <AppLink className={styles.title} href="/">
         <AppIcon />
         Tasty Creations
-      </Link>
+      </AppLink>
       <Navigation />
-      <Button theme={ButtonTheme.CLEAR} size={ButtonSize.L}>
+      <AppLink href="/login" size={LinkSize.L}>
         Войти
-      </Button>
+      </AppLink>
     </header>
   );
 };

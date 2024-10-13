@@ -26,10 +26,12 @@
   color: none;
   border: none;
   color: var(--button-color);
+  border-bottom: 1px solid var(--button-color);
 }
 
 .clear:hover {
-  border-bottom: 2px solid var(--button-color);
+  color: var(--button-color-active);
+  border-color: var(--button-color-active);
 }
 
 //-----size-----
