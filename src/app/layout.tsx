@@ -4,7 +4,8 @@ import Navbar from "@/widgets/Navbar/Navbar";
 import Transition from "@/shared/animations/Transition/Transition";
 import PageReveal from "@/shared/animations/PageReveal/PageReveal";
 
-import "../globals.scss";
+import "./globals.scss";
+import ReactQueryProvider from "./providers/ReactQueryProvider";
 
 const lora = Lora({ weight: "400", subsets: ["cyrillic"] });
 
@@ -21,11 +22,13 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={`${lora.className}`}>
-        <Navbar />
-        <Transition />
-        <PageReveal>
-          <div className="app">{children}</div>
-        </PageReveal>
+        <ReactQueryProvider>
+          <Navbar />
+          <Transition />
+          <PageReveal>
+            <div className="app">{children}</div>
+          </PageReveal>
+        </ReactQueryProvider>
       </body>
     </html>
   );
