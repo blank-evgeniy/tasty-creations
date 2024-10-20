@@ -3,7 +3,7 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import { getAllRecipes } from "../../services/getAllRecipes";
+import { recipeService } from "../../services/recipeService";
 import RecipesList from "./RecipesList";
 
 export const RecipeListHydration = async () => {
@@ -11,7 +11,7 @@ export const RecipeListHydration = async () => {
 
   await queryClient.prefetchQuery({
     queryKey: ["recipes"],
-    queryFn: getAllRecipes,
+    queryFn: recipeService.getAllRecipes,
   });
 
   return (

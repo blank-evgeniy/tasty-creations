@@ -5,19 +5,23 @@ import {
   saveTokenStorage,
 } from "@/shared/services/auth-token";
 
-export const authService = {
+class AuthService {
+  private BASE_URL = "/auth";
+
   async main(type: "login" | "register", data: AuthForm) {
     const response = await axiosClassic.post<AuthResponse>(
-      `/auth/${type}`,
+      `/${this.BASE_URL}/${type}`,
       data
     );
 
     if (response.data.token) saveTokenStorage(response.data.token);
 
     return response;
-  },
+  }
 
   async logout() {
     removeFromStorage();
-  },
-};
+  }
+}
+
+export const authService = new AuthService();

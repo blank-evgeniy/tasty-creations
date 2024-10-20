@@ -14,3 +14,7 @@ export interface Recipe {
   calories?: number;
   icon?: string;
 }
+
+export interface RecipeResponse extends Recipe {
+  id: string;
+}

@@ -2,7 +2,7 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./RecipesList.module.scss";
 import { useQuery } from "@tanstack/react-query";
-import { getAllRecipes } from "../../services/getAllRecipes";
+import { recipeService } from "../../services/recipeService";
 import { RecipeCard } from "../RecipeCard/RecipeCard";
 
 interface RecipesListProps {
@@ -12,7 +12,7 @@ interface RecipesListProps {
 const RecipesList = ({ className }: RecipesListProps) => {
   const { data, error, isLoading } = useQuery({
     queryKey: ["recipes"],
-    queryFn: getAllRecipes,
+    queryFn: recipeService.getAllRecipes,
     staleTime: 30 * 1000,
   });
 
