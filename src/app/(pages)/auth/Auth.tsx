@@ -1,19 +1,16 @@
 "use client";
-import styles from "./page.module.scss";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import LoginForm from "@/widgets/LoginForm/LoginForm";
-import RegistrationForm from "@/widgets/RegistrationForm/RegistrationForm";
-import { Merriweather } from "next/font/google";
-import React, { useState } from "react";
 
-const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
+import styles from "./page.module.scss";
+import LoginForm from "@/features/authByUsername/ui/LoginForm/LoginForm";
+import RegistrationForm from "@/features/authByUsername/ui/RegistrationForm/RegistrationForm";
+import React, { useState } from "react";
 
 export enum AuthMods {
   LOGIN = "login",
   CREATE = "create",
 }
 
-const AuthPage = () => {
+const Auth = () => {
   const [mode, setMode] = useState<AuthMods>(AuthMods.LOGIN);
 
   const toggleMode = () => {
@@ -25,9 +22,6 @@ const AuthPage = () => {
   return (
     <div className={styles.page}>
       <div className={styles.wrapper}>
-        <h1 className={classNames(styles.title, {}, [merriweather.className])}>
-          Вход
-        </h1>
         {mode === AuthMods.LOGIN ? (
           <LoginForm onSwap={toggleMode} />
         ) : (
@@ -38,4 +32,4 @@ const AuthPage = () => {
   );
 };
 
-export default AuthPage;
+export default Auth;

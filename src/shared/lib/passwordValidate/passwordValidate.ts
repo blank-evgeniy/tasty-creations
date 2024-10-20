@@ -30,8 +30,6 @@ export const passwordAdvancedValidate: (password: string) => string[] = (
   if (!hasSpecialChars) {
     errors.push("пароль должен содержать хотя бы один специальный символ");
   }
-  console.log(hasNumbers);
-  console.log(password);
-  console.log(errors);
+
   return errors;
 };

@@ -25,7 +25,7 @@ const Navbar = ({ className }: NavbarProps) => {
         Tasty Creations
       </AppLink>
       <Navigation />
-      <AppLink href="/login" size={LinkSize.L}>
+      <AppLink href="/auth" size={LinkSize.L}>
         Войти
       </AppLink>
     </header>

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import Navbar from "@/widgets/Navbar/Navbar";
-import Transition from "@/shared/animations/Transition/Transition";
-import PageReveal from "@/shared/animations/PageReveal/PageReveal";
+import Transition from "@/shared/ui/animations/Transition/Transition";
+import PageReveal from "@/shared/ui/animations/PageReveal/PageReveal";
 
 import "./globals.scss";
 import ReactQueryProvider from "./providers/ReactQueryProvider";

@@ -5,15 +5,12 @@ import TextField from "@/shared/ui/TextField/TextField";
 import Button, { ButtonTheme } from "@/shared/ui/Button/Button";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import { passwordAdvancedValidate } from "@/shared/lib/passwordValidate/passwordValidate";
+import { AuthForm, authService } from "@/features/authByUsername";
+import { useMutation } from "@tanstack/react-query";
 
 interface RegistrationFormProps {
   className?: string;
   onSwap?: () => void;
-}
-
-interface RegistrationFormFields {
-  username: string;
-  password: string;
 }
 
 const RegistrationForm = ({ className, onSwap }: RegistrationFormProps) => {
@@ -21,13 +18,23 @@ const RegistrationForm = ({ className, onSwap }: RegistrationFormProps) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<RegistrationFormFields>();
+    reset,
+  } = useForm<AuthForm>();
 
-  const submit: SubmitHandler<RegistrationFormFields> = (data) => {
-    console.log(data);
+  const { mutate } = useMutation({
+    mutationKey: ["register"],
+    mutationFn: (data: AuthForm) => authService.main("register", data),
+    onSuccess() {
+      reset();
+      if (onSwap) onSwap();
+    },
+  });
+
+  const submit: SubmitHandler<AuthForm> = (data) => {
+    mutate(data);
   };
 
-  const error: SubmitErrorHandler<RegistrationFormFields> = (data) => {
+  const error: SubmitErrorHandler<AuthForm> = (data) => {
     console.log(data);
   };
 
@@ -50,6 +57,7 @@ const RegistrationForm = ({ className, onSwap }: RegistrationFormProps) => {
       onSubmit={handleSubmit(submit, error)}
       className={classNames(styles.registration_form, {}, [className])}
     >
+      <h1 className={classNames(styles.title)}>Регистрация</h1>
       <div className={styles.inputs_container}>
         <TextField
           label="Придумайте имя пользователя"

@@ -1,6 +1,6 @@
 import { RecipesList } from "@/entities/Recipe";
 import styles from "./page.module.scss";
-import Reveal from "@/shared/animations/Reveal/Reveal";
+import Reveal from "@/shared/ui/animations/Reveal/Reveal";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Merriweather } from "next/font/google";
 import React from "react";
