@@ -5,6 +5,7 @@ import { Merriweather } from "next/font/google";
 
 import styles from "./Navbar.module.scss";
 import AppLink, { LinkSize } from "@/shared/ui/Link/AppLink";
+import { PagesUrl } from "@/app/config/pagesUrl";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
@@ -20,12 +21,12 @@ const Navbar = ({ className }: NavbarProps) => {
         merriweather.className,
       ])}
     >
-      <AppLink className={styles.title} href="/">
+      <AppLink className={styles.title} href={PagesUrl.HOME}>
         <AppIcon />
         Tasty Creations
       </AppLink>
       <Navigation />
-      <AppLink href="/auth" size={LinkSize.L}>
+      <AppLink href={PagesUrl.AUTH} size={LinkSize.L}>
         Войти
       </AppLink>
     </header>

@@ -7,6 +7,7 @@ import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import { AuthForm, authService } from "@/features/authByUsername";
 import { useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
+import { PagesUrl } from "@/app/config/pagesUrl";
 
 interface LoginFormProps {
   className?: string;
@@ -28,7 +29,7 @@ const LoginForm = ({ className, onSwap }: LoginFormProps) => {
     mutationFn: (data: AuthForm) => authService.main("login", data),
     onSuccess() {
       reset();
-      push("/menu");
+      push(PagesUrl.HOME);
     },
   });
 

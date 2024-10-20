@@ -11,6 +11,7 @@ import PersonIcon from "@/shared/assets/icons/circle-user-round.svg";
 import Reveal from "@/shared/ui/animations/Reveal/Reveal";
 import TextReveal from "@/shared/ui/animations/TextReveal/TextReveal";
 import { Merriweather } from "next/font/google";
+import { PagesUrl } from "@/app/config/pagesUrl";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
@@ -54,7 +55,7 @@ export default function Home() {
               theme={LinkTheme.BUTTON}
               color={LinkColor.SECONDARY}
               size={LinkSize.L}
-              href="/categories"
+              href={PagesUrl.CATEGORIES}
             >
               Начать готовить!
             </AppLink>

@@ -5,6 +5,7 @@ import Reveal from "@/shared/ui/animations/Reveal/Reveal";
 import { CategoriesList, CategoryCard } from "@/entities/Category";
 import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
 import MoveRightIcon from "@/shared/assets/icons/move-right.svg";
+import { PagesUrl } from "@/app/config/pagesUrl";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
@@ -38,7 +39,7 @@ export default function Categories() {
           </h2>
 
           <AppLink
-            href="/menu"
+            href={PagesUrl.RECIPES}
             theme={LinkTheme.BUTTON}
             className={styles.button}
           >

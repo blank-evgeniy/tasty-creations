@@ -2,20 +2,21 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import NavLink from "../NavLink/NavLink";
 
 import styles from "./Navigation.module.scss";
+import { PagesUrl } from "@/app/config/pagesUrl";
 
 interface NavigationProps {
   className?: string;
 }
 
 interface NavigationLink {
-  href: string;
+  href: PagesUrl;
   title: string;
 }
 
 const NavLinks: NavigationLink[] = [
-  { href: "/categories", title: "Категории" },
-  { href: "/menu", title: "Рецепты" },
-  { href: "/random", title: "Что приготовить?" },
+  { href: PagesUrl.CATEGORIES, title: "Категории" },
+  { href: PagesUrl.RECIPES, title: "Рецепты" },
+  { href: PagesUrl.RANDOM, title: "Что приготовить?" },
 ];
 
 const Navigation = ({ className }: NavigationProps) => {

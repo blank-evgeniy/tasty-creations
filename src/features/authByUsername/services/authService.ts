@@ -1,5 +1,5 @@
 import { axiosClassic } from "@/shared/api/api";
-import { AuthForm, AuthResponse } from "../types/auth.type";
+import { AuthForm, AuthResponse } from "../types/authType";
 import {
   removeFromStorage,
   saveTokenStorage,
