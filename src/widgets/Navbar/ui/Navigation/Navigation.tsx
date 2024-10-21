@@ -1,5 +1,5 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
-import NavLink from "../NavLink/NavLink";
+import NavLink from "../../../../shared/ui/NavLink/NavLink";
 
 import styles from "./Navigation.module.scss";
 import { PagesUrl } from "@/app/config/pagesUrl";

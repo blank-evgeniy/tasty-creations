@@ -14,7 +14,7 @@ interface LoginFormProps {
   onSwap?: () => void;
 }
 
-const LoginForm = ({ className, onSwap }: LoginFormProps) => {
+export const LoginForm = ({ className, onSwap }: LoginFormProps) => {
   const {
     register,
     handleSubmit,
@@ -96,5 +96,3 @@ const LoginForm = ({ className, onSwap }: LoginFormProps) => {
     </form>
   );
 };
-
-export default LoginForm;

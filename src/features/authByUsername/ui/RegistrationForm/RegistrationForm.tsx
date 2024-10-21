@@ -13,7 +13,10 @@ interface RegistrationFormProps {
   onSwap?: () => void;
 }
 
-const RegistrationForm = ({ className, onSwap }: RegistrationFormProps) => {
+export const RegistrationForm = ({
+  className,
+  onSwap,
+}: RegistrationFormProps) => {
   const {
     register,
     handleSubmit,
@@ -95,5 +98,3 @@ const RegistrationForm = ({ className, onSwap }: RegistrationFormProps) => {
     </form>
   );
 };
-
-export default RegistrationForm;

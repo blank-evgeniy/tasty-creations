@@ -1,11 +1,11 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import AppIcon from "@/shared/assets/icons/app-icon.svg";
-import Navigation from "@/shared/ui/Navigation/Navigation";
 import { Merriweather } from "next/font/google";
 
 import styles from "./Navbar.module.scss";
 import AppLink, { LinkSize } from "@/shared/ui/Link/AppLink";
 import { PagesUrl } from "@/app/config/pagesUrl";
+import Navigation from "./Navigation/Navigation";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
@@ -13,7 +13,7 @@ interface NavbarProps {
   className?: string;
 }
 
-const Navbar = ({ className }: NavbarProps) => {
+export const Navbar = ({ className }: NavbarProps) => {
   return (
     <header
       className={classNames(styles.container, {}, [
@@ -32,5 +32,3 @@ const Navbar = ({ className }: NavbarProps) => {
     </header>
   );
 };
-
-export default Navbar;

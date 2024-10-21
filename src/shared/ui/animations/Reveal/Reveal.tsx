@@ -28,7 +28,7 @@ interface RevealProps {
   behaviour?: RevealBehaviourKeys;
 }
 
-const Reveal: React.FC<RevealProps> = ({
+export const Reveal: React.FC<RevealProps> = ({
   children,
   delay = 0,
   behaviour = "DEFAULT",
@@ -44,5 +44,3 @@ const Reveal: React.FC<RevealProps> = ({
     </motion.div>
   );
 };
-
-export default Reveal;

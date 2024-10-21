@@ -1,10 +1,10 @@
 "use client";
 
-import { MotionBanner } from "@/widgets/Banner/Banner";
 import { AnimatePresence, Variants } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 import styles from "./Transition.module.scss";
+import { MotionBanner } from "./Banner/Banner";
 
 const transitionAnimation: Variants = {
   initial: { top: "0%" },
@@ -17,7 +17,7 @@ const transitionAnimation: Variants = {
   },
 };
 
-const Transition = () => {
+export const Transition = () => {
   const pathname = usePathname();
 
   return (
@@ -35,5 +35,3 @@ const Transition = () => {
     </AnimatePresence>
   );
 };
-
-export default Transition;

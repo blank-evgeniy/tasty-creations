@@ -27,7 +27,7 @@ const characterAnimation: Variants = {
   },
 };
 
-const TextReveal = ({ text }: TextRevealProps) => {
+export const TextReveal = ({ text }: TextRevealProps) => {
   return (
     <>
       {text.split(" ").map((word, index) => (
@@ -59,4 +59,3 @@ const TextReveal = ({ text }: TextRevealProps) => {
   );
 };
 
-export default TextReveal;

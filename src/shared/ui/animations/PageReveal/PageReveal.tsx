@@ -4,7 +4,7 @@ import styles from "./PageReveal.module.scss";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
-const PageReveal = ({ children }: { children: React.ReactNode }) => {
+export const PageReveal = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   return (
@@ -23,5 +23,3 @@ const PageReveal = ({ children }: { children: React.ReactNode }) => {
     </AnimatePresence>
   );
 };
-
-export default PageReveal;

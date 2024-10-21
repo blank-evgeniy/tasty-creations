@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Lora } from "next/font/google";
-import Navbar from "@/widgets/Navbar/Navbar";
-import Transition from "@/shared/ui/animations/Transition/Transition";
-import PageReveal from "@/shared/ui/animations/PageReveal/PageReveal";
+import ReactQueryProvider from "./providers/ReactQueryProvider";
+import { Navbar } from "@/widgets/Navbar";
+import { PageReveal, Transition } from "@/shared/ui/Animations";
 
 import "./globals.scss";
-import ReactQueryProvider from "./providers/ReactQueryProvider";
 
 const lora = Lora({ weight: "400", subsets: ["cyrillic"] });
 

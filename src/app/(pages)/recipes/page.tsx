@@ -1,9 +1,9 @@
 import { RecipesList } from "@/entities/Recipe";
 import styles from "./page.module.scss";
-import Reveal from "@/shared/ui/animations/Reveal/Reveal";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Merriweather } from "next/font/google";
 import React from "react";
+import { Reveal } from "@/shared/ui/Animations";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 

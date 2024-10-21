@@ -1,11 +1,11 @@
 import styles from "./page.module.scss";
 import { Merriweather } from "next/font/google";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import Reveal from "@/shared/ui/animations/Reveal/Reveal";
 import { CategoriesList, CategoryCard } from "@/entities/Category";
 import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
 import MoveRightIcon from "@/shared/assets/icons/move-right.svg";
 import { PagesUrl } from "@/app/config/pagesUrl";
+import { Reveal } from "@/shared/ui/Animations";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 

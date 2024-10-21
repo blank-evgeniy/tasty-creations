@@ -8,10 +8,9 @@ import AppLink, {
 } from "@/shared/ui/Link/AppLink";
 import GithubIcon from "@/shared/assets/icons/github.svg";
 import PersonIcon from "@/shared/assets/icons/circle-user-round.svg";
-import Reveal from "@/shared/ui/animations/Reveal/Reveal";
-import TextReveal from "@/shared/ui/animations/TextReveal/TextReveal";
 import { Merriweather } from "next/font/google";
 import { PagesUrl } from "@/app/config/pagesUrl";
+import { Reveal, TextReveal } from "@/shared/ui/Animations";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 

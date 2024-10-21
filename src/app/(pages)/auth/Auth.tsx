@@ -1,8 +1,7 @@
 "use client";
 
+import { LoginForm, RegistrationForm } from "@/features/authByUsername";
 import styles from "./page.module.scss";
-import LoginForm from "@/features/authByUsername/ui/LoginForm/LoginForm";
-import RegistrationForm from "@/features/authByUsername/ui/RegistrationForm/RegistrationForm";
 import React, { useState } from "react";
 
 export enum AuthMods {
