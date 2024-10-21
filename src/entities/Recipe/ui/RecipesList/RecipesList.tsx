@@ -12,7 +12,7 @@ interface RecipesListProps {
 const RecipesList = ({ className }: RecipesListProps) => {
   const { data, error, isLoading } = useQuery({
     queryKey: ["recipes"],
-    queryFn: recipeService.getAllRecipes,
+    queryFn: () => recipeService.getAllRecipes(),
     staleTime: 30 * 1000,
   });
 

@@ -10,7 +10,7 @@ class AuthService {
 
   async main(type: "login" | "register", data: AuthForm) {
     const response = await axiosClassic.post<AuthResponse>(
-      `/${this.BASE_URL}/${type}`,
+      `${this.BASE_URL}/${type}`,
       data
     );
 

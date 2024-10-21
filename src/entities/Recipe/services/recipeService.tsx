@@ -5,9 +5,7 @@ class RecipeService {
   private BASE_URL = "/recipes";
 
   async getAllRecipes() {
-    const response = await axiosClassic.get<RecipeResponse[]>(
-      `/${this.BASE_URL}`
-    );
+    const response = await axiosClassic.get<RecipeResponse[]>(this.BASE_URL);
 
     return response.data;
   }
