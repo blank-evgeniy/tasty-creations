@@ -5,7 +5,7 @@ import { CategoriesList, CategoryCard } from "@/entities/Category";
 import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
 import MoveRightIcon from "@/shared/assets/icons/move-right.svg";
 import { PagesUrl } from "@/app/config/pagesUrl";
-import { Reveal } from "@/shared/ui/Animations";
+import { Reveal } from "@/shared/ui/Animation";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 

@@ -4,10 +4,9 @@ import styles from "./LoginForm.module.scss";
 import TextField from "@/shared/ui/TextField/TextField";
 import Button, { ButtonTheme } from "@/shared/ui/Button/Button";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
-import { AuthForm, authService } from "@/features/authByUsername";
-import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
-import { PagesUrl } from "@/app/config/pagesUrl";
+import { AuthForm } from "@/features/authByUsername";
+
+import { useAuth } from "../../api/useAuth";
 
 interface LoginFormProps {
   className?: string;
@@ -19,22 +18,12 @@ export const LoginForm = ({ className, onSwap }: LoginFormProps) => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<AuthForm>();
 
-  const { push } = useRouter();
-
-  const { mutate } = useMutation({
-    mutationKey: ["login"],
-    mutationFn: (data: AuthForm) => authService.main("login", data),
-    onSuccess() {
-      reset();
-      push(PagesUrl.HOME);
-    },
-  });
+  const { login } = useAuth();
 
   const submit: SubmitHandler<AuthForm> = (data) => {
-    mutate(data);
+    login(data);
   };
 
   const error: SubmitErrorHandler<AuthForm> = (data) => {

@@ -1,0 +1,25 @@
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--main-color);
+}
+
+.admin {
+  color: var(--danger-color);
+}
+
+.avatar {
+  background-color: var(--main-color);
+  color: var(--main-color-inverted);
+
+  border-radius: 100%;
+
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

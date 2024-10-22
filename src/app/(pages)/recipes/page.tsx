@@ -3,7 +3,7 @@ import styles from "./page.module.scss";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Merriweather } from "next/font/google";
 import React from "react";
-import { Reveal } from "@/shared/ui/Animations";
+import { Reveal } from "@/shared/ui/Animation";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 

@@ -10,7 +10,7 @@ import GithubIcon from "@/shared/assets/icons/github.svg";
 import PersonIcon from "@/shared/assets/icons/circle-user-round.svg";
 import { Merriweather } from "next/font/google";
 import { PagesUrl } from "@/app/config/pagesUrl";
-import { Reveal, TextReveal } from "@/shared/ui/Animations";
+import { Reveal, TextReveal } from "@/shared/ui/Animation";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 

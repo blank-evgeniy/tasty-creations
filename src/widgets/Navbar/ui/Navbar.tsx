@@ -1,11 +1,14 @@
+"use client";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import AppIcon from "@/shared/assets/icons/app-icon.svg";
 import { Merriweather } from "next/font/google";
-
-import styles from "./Navbar.module.scss";
 import AppLink, { LinkSize } from "@/shared/ui/Link/AppLink";
 import { PagesUrl } from "@/app/config/pagesUrl";
 import Navigation from "./Navigation/Navigation";
+
+import styles from "./Navbar.module.scss";
+import { useAuth } from "@/features/authByUsername";
+import Profile from "./Profile/Profile";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
@@ -14,6 +17,8 @@ interface NavbarProps {
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
+  const { user } = useAuth();
+
   return (
     <header
       className={classNames(styles.container, {}, [
@@ -21,14 +26,18 @@ export const Navbar = ({ className }: NavbarProps) => {
         merriweather.className,
       ])}
     >
-      <AppLink className={styles.title} href={PagesUrl.HOME}>
+      <AppLink size={LinkSize.L} className={styles.title} href={PagesUrl.HOME}>
         <AppIcon />
         Tasty Creations
       </AppLink>
       <Navigation />
-      <AppLink href={PagesUrl.AUTH} size={LinkSize.L}>
-        Войти
-      </AppLink>
+      {!!user ? (
+        <Profile user={user} />
+      ) : (
+        <AppLink href={PagesUrl.AUTH} size={LinkSize.L}>
+          Войти
+        </AppLink>
+      )}
     </header>
   );
 };

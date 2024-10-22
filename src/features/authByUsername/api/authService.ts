@@ -1,5 +1,5 @@
-import { axiosClassic } from "@/shared/api/api";
-import { AuthForm, AuthResponse } from "../model/authType";
+import { axiosClassic, axiosWithAuth } from "@/shared/api/api";
+import { AuthForm, AuthResponse, UserResponse } from "../model/authType";
 import {
   removeFromStorage,
   saveTokenStorage,
@@ -21,6 +21,12 @@ class AuthService {
 
   async logout() {
     removeFromStorage();
+  }
+
+  async fetchUser() {
+    const response = await axiosWithAuth.get<UserResponse>("/profile");
+
+    return response.data || null;
   }
 }
 

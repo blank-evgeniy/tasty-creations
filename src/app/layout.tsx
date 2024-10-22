@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Lora } from "next/font/google";
 import ReactQueryProvider from "./providers/ReactQueryProvider";
 import { Navbar } from "@/widgets/Navbar";
-import { PageReveal, Transition } from "@/shared/ui/Animations";
+import { PageReveal, Transition } from "@/shared/ui/Animation";
 
 import "./globals.scss";
 
