@@ -1,10 +1,10 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
-import styles from "./CategoryCard.module.scss";
 import Link from "next/link";
 import { Category } from "../../model/category";
 import { Noto_Serif } from "next/font/google";
+import { getClientIcon } from "@/shared/ui/ClientIcon";
 
-import Icon from "@/shared/assets/icons/cherry.svg";
+import styles from "./CategoryCard.module.scss";
 
 const noto = Noto_Serif({ weight: "500", subsets: ["cyrillic"] });
 
@@ -15,6 +15,8 @@ interface CategoryCardProps {
 
 export const CategoryCard = ({ className, data }: CategoryCardProps) => {
   const { path, name, icon } = data;
+
+  const Icon = getClientIcon(icon);
 
   return (
     <Link href={`/menu/${path}`}>
