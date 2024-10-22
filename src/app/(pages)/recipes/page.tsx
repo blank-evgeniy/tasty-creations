@@ -16,7 +16,7 @@ const Recipes = async () => {
         </h1>
       </Reveal>
 
-      <RecipesList />
+      <RecipesList className={styles.recipes_list} />
     </div>
   );
 };

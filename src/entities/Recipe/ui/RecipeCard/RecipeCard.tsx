@@ -5,18 +5,14 @@ import ClockIcon from "@/shared/assets/icons/clock.svg";
 import BookIcon from "@/shared/assets/icons/book-heart.svg";
 import FireIcon from "@/shared/assets/icons/flame.svg";
 import { Recipe } from "../../model/recipe";
-import { RecipesListMock } from "../../model/RecipesList";
 import Button, { ButtonSize } from "@/shared/ui/Button/Button";
 
 interface RecipeCardProps {
   className?: string;
-  data?: Recipe;
+  data: Recipe;
 }
 
-export const RecipeCard = ({
-  className,
-  data = RecipesListMock[0],
-}: RecipeCardProps) => {
+export const RecipeCard = ({ className, data }: RecipeCardProps) => {
   const { name, calories, time } = data;
 
   return (

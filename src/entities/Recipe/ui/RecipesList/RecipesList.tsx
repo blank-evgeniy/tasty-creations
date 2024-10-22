@@ -2,7 +2,7 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./RecipesList.module.scss";
 import { useQuery } from "@tanstack/react-query";
-import { recipeService } from "../../services/recipeService";
+import { recipeService } from "../../api/recipeService";
 import { RecipeCard } from "../RecipeCard/RecipeCard";
 
 interface RecipesListProps {

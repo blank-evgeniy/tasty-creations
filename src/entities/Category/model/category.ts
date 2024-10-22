@@ -1,5 +1,6 @@
 export interface Category {
-  path: string;
+  _id: string;
   name: string;
-  Icon: React.FC<React.SVGProps<SVGElement>>;
+  path?: string;
+  icon?: string;
 }

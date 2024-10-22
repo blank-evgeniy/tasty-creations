@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Category } from "../../model/category";
 import { Noto_Serif } from "next/font/google";
 
+import Icon from "@/shared/assets/icons/cherry.svg";
+
 const noto = Noto_Serif({ weight: "500", subsets: ["cyrillic"] });
 
 interface CategoryCardProps {
@@ -12,7 +14,7 @@ interface CategoryCardProps {
 }
 
 export const CategoryCard = ({ className, data }: CategoryCardProps) => {
-  const { path, name, Icon } = data;
+  const { path, name, icon } = data;
 
   return (
     <Link href={`/menu/${path}`}>

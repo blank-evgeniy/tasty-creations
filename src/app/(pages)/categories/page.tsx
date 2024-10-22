@@ -1,19 +1,15 @@
 import styles from "./page.module.scss";
 import { Merriweather } from "next/font/google";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { CategoriesList, CategoryCard } from "@/entities/Category";
 import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
 import MoveRightIcon from "@/shared/assets/icons/move-right.svg";
 import { PagesUrl } from "@/app/config/pagesUrl";
 import { Reveal } from "@/shared/ui/Animation";
+import { CategoriesList } from "@/entities/Category";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
 export default function Categories() {
-  const CategoriesCards = CategoriesList.map((category) => (
-    <CategoryCard key={category.path} data={category} />
-  ));
-
   return (
     <div className={styles.page}>
       <Reveal>
@@ -29,7 +25,7 @@ export default function Categories() {
       </Reveal>
 
       <Reveal delay={0.6}>
-        <div className={styles.categories_list}>{CategoriesCards}</div>
+        <CategoriesList className={styles.categories_list} />
       </Reveal>
 
       <Reveal delay={0.8}>
