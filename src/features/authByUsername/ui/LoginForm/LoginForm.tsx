@@ -2,7 +2,7 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./LoginForm.module.scss";
 import TextField from "@/shared/ui/TextField/TextField";
-import Button, { ButtonTheme } from "@/shared/ui/Button/Button";
+import Button, { ButtonColor, ButtonTheme } from "@/shared/ui/Button/Button";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import { AuthForm } from "@/features/authByUsername";
 import { useAuth } from "../../api/useAuth";
@@ -57,12 +57,21 @@ export const LoginForm = ({ className, onSwap }: LoginFormProps) => {
       </div>
 
       <div className={styles.buttons_container}>
-        <Button className={styles.btn} type="submit">
+        <Button
+          color={ButtonColor.SECONDARY}
+          className={styles.btn}
+          type="submit"
+        >
           Войти
         </Button>
         <div>
           Еще нет аккаунта? -{" "}
-          <Button onClick={onSwap} theme={ButtonTheme.CLEAR} type="button">
+          <Button
+            color={ButtonColor.SECONDARY}
+            onClick={onSwap}
+            theme={ButtonTheme.CLEAR}
+            type="button"
+          >
             создать аккаунт
           </Button>
         </div>

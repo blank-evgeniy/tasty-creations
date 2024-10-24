@@ -8,6 +8,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import { RecipesHeading } from "./Heading";
+import { Reveal } from "@/shared/ui/Animation";
 
 const Recipes = async ({ params }: { params: { category: string } }) => {
   const queryClient = new QueryClient();
@@ -19,9 +20,11 @@ const Recipes = async ({ params }: { params: { category: string } }) => {
 
   return (
     <div className={styles.page}>
-      <HydrationBoundary state={dehydrate(queryClient)}>
-        <RecipesHeading path={params.category} />
-      </HydrationBoundary>
+      <Reveal>
+        <HydrationBoundary state={dehydrate(queryClient)}>
+          <RecipesHeading path={params.category} />
+        </HydrationBoundary>
+      </Reveal>
 
       <RecipesList category={params.category} className={styles.recipes_list} />
     </div>

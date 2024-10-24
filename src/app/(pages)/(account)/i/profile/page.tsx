@@ -10,7 +10,7 @@ const ProfilePage = () => {
       <Reveal>
         <Heading>Профиль</Heading>
       </Reveal>
-      <Reveal delay={0.5}>
+      <Reveal delay={0.2}>
         <div className={styles.wrapper}>
           <ProfileCard className={styles.profile} />
           <MiniRecipeBook className={styles.recipe_book} />

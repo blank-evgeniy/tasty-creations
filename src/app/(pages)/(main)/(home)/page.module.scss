@@ -1,21 +1,35 @@
 .page {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 32px;
 
-  margin-top: 60px;
+  margin: 32px 0;
+}
+
+.img_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
 }
 
 .hero_image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - var(--navbar-height) - 64px);
+
   object-fit: contain;
-  max-height: calc(100vh - var(--navbar-height) - 80px);
+  border-radius: 32px;
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
 
-  padding-bottom: 40px;
+  gap: 64px;
 }
 
 .about {

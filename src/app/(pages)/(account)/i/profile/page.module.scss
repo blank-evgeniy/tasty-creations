@@ -1,10 +1,11 @@
 .page {
-  height: calc(100vh - var(--navbar-height));
   padding-bottom: var(--navbar-height);
+
+  margin: 32px 0;
 }
 
 .wrapper {
-  margin: 64px 0;
+  margin-top: 48px;
   display: flex;
   gap: 64px;
 }

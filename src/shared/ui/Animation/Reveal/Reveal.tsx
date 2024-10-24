@@ -12,12 +12,12 @@ export const RevealBehaviour: RevealBehaviourType = {
   },
 
   LEFT: {
-    hidden: { opacity: 0, x: "-100%" },
+    hidden: { opacity: 0, x: "-20%" },
     shown: { opacity: 1, x: 0 },
   },
 
   RIGHT: {
-    hidden: { opacity: 0, x: "100%" },
+    hidden: { opacity: 0, x: "20%" },
     shown: { opacity: 1, x: 0 },
   },
 };

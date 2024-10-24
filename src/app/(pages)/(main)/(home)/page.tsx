@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HeroImage from "@/shared/assets/pictures/hero.png";
+import HeroImage from "@/shared/assets/pictures/hero.jpg";
 import AppLink, {
   LinkColor,
   LinkSize,
@@ -17,11 +17,14 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <Reveal behaviour={"LEFT"}>
-        <Image
-          className={styles.hero_image}
-          src={HeroImage}
-          alt="персонаж-повар"
-        />
+        <div className={styles.img_container}>
+          <Image
+            priority
+            className={styles.hero_image}
+            src={HeroImage}
+            alt="персонаж-повар"
+          />
+        </div>
       </Reveal>
       <main className={styles.content}>
         <div className={styles.about}>

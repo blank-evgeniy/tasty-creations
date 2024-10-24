@@ -1,5 +1,26 @@
 .page {
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  column-gap: 32px;
+
+  margin: 32px 0;
+}
+
+.img_container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero_image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - var(--navbar-height) - 64px);
+
+  object-fit: contain;
+  border-radius: 32px;
 }
 
 .subtitle {
@@ -13,7 +34,7 @@
 }
 
 .link_section {
-  padding-top: 32px;
+  padding-top: 16px;
   font-size: var(--font-size-l);
 }
 

@@ -4,6 +4,7 @@ import styles from "./RecipesList.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { recipeService } from "../../api/recipeService";
 import { RecipeCard } from "../RecipeCard/RecipeCard";
+import { Reveal } from "@/shared/ui/Animation";
 
 interface RecipesListProps {
   className?: string;
@@ -25,8 +26,10 @@ const RecipesList = ({ className, category }: RecipesListProps) => {
 
   return (
     <div className={classNames(styles.recipes_list, {}, [className])}>
-      {data.map((recipe) => (
-        <RecipeCard key={recipe._id} data={recipe} />
+      {data.map((recipe, index) => (
+        <Reveal key={recipe._id} delay={0.2 + 0.1 * index}>
+          <RecipeCard data={recipe} />
+        </Reveal>
       ))}
     </div>
   );

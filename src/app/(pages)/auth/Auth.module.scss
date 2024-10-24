@@ -16,7 +16,8 @@
   border-radius: 32px;
 
   padding: var(--p-xl);
-  background-color: var(--accent-color-light);
+  background-color: var(--main-color);
+  color: var(--main-color-inverted);
 
   @include shadow;
 }

@@ -2,7 +2,7 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./RegistrationForm.module.scss";
 import TextField from "@/shared/ui/TextField/TextField";
-import Button, { ButtonTheme } from "@/shared/ui/Button/Button";
+import Button, { ButtonColor, ButtonTheme } from "@/shared/ui/Button/Button";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import { passwordAdvancedValidate } from "@/shared/lib/passwordValidate/passwordValidate";
 import { AuthForm, authService } from "@/features/authByUsername";
@@ -85,12 +85,21 @@ export const RegistrationForm = ({
       </div>
 
       <div className={styles.buttons_container}>
-        <Button className={styles.btn} type="submit">
+        <Button
+          color={ButtonColor.SECONDARY}
+          className={styles.btn}
+          type="submit"
+        >
           Создать
         </Button>
         <div>
           Уже есть аккаунт? -{" "}
-          <Button onClick={onSwap} theme={ButtonTheme.CLEAR} type="button">
+          <Button
+            color={ButtonColor.SECONDARY}
+            onClick={onSwap}
+            theme={ButtonTheme.CLEAR}
+            type="button"
+          >
             войти
           </Button>
         </div>
