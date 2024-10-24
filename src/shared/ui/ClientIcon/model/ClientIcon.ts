@@ -6,6 +6,7 @@ import SoupIcon from "@/shared/assets/icons/soup.svg";
 import SaladIcon from "@/shared/assets/icons/salad.svg";
 import WineIcon from "@/shared/assets/icons/wine.svg";
 import CheryIcon from "@/shared/assets/icons/cherry.svg";
+import DefaultIcon from "@/shared/assets/icons/cooking-pot.svg";
 
 export const Icons: Record<string, FC<SVGProps<SVGElement>>> = {
   beef: BeefIcon,
@@ -13,5 +14,5 @@ export const Icons: Record<string, FC<SVGProps<SVGElement>>> = {
   salad: SaladIcon,
   wine: WineIcon,
   cherry: CheryIcon,
-  default: CheryIcon,
+  default: DefaultIcon,
 };

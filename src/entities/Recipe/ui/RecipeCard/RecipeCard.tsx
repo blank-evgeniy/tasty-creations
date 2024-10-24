@@ -1,11 +1,11 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./RecipeCard.module.scss";
-import Icon from "@/shared/assets/icons/cooking-pot.svg";
 import ClockIcon from "@/shared/assets/icons/clock.svg";
 import BookIcon from "@/shared/assets/icons/book-heart.svg";
 import FireIcon from "@/shared/assets/icons/flame.svg";
 import { Recipe } from "../../model/recipe";
 import Button, { ButtonSize } from "@/shared/ui/Button/Button";
+import { getClientIcon } from "@/shared/ui/ClientIcon";
 
 interface RecipeCardProps {
   className?: string;
@@ -13,7 +13,9 @@ interface RecipeCardProps {
 }
 
 export const RecipeCard = ({ className, data }: RecipeCardProps) => {
-  const { name, calories, time } = data;
+  const { name, calories, time, icon } = data;
+
+  const Icon = getClientIcon(icon);
 
   return (
     <div className={classNames(styles.recipe_card, {}, [className])}>

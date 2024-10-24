@@ -4,8 +4,16 @@ import { RecipeResponse } from "../model/recipe";
 class RecipeService {
   private BASE_URL = "/recipes";
 
-  async getAllRecipes() {
-    const response = await axiosClassic.get<RecipeResponse[]>(this.BASE_URL);
+  async getRecipes(category?: string) {
+    let response;
+
+    if (category) {
+      response = await axiosClassic.get<RecipeResponse[]>(this.BASE_URL, {
+        params: { category },
+      });
+    } else {
+      response = await axiosClassic.get<RecipeResponse[]>(this.BASE_URL);
+    }
 
     return response.data;
   }

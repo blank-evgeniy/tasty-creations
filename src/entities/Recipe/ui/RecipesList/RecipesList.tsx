@@ -7,12 +7,13 @@ import { RecipeCard } from "../RecipeCard/RecipeCard";
 
 interface RecipesListProps {
   className?: string;
+  category?: string;
 }
 
-const RecipesList = ({ className }: RecipesListProps) => {
+const RecipesList = ({ className, category }: RecipesListProps) => {
   const { data, error, isLoading } = useQuery({
-    queryKey: ["recipes"],
-    queryFn: () => recipeService.getAllRecipes(),
+    queryKey: ["recipes", category],
+    queryFn: () => recipeService.getRecipes(category),
     staleTime: 30 * 1000,
   });
 

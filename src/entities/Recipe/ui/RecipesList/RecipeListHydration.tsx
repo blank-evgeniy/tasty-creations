@@ -7,22 +7,24 @@ import { recipeService } from "../../api/recipeService";
 import RecipesList from "./RecipesList";
 
 interface RecipeListHydrationProps {
-  className: string;
+  className?: string;
+  category?: string;
 }
 
 export const RecipeListHydration = async ({
   className,
+  category,
 }: RecipeListHydrationProps) => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["recipes"],
-    queryFn: () => recipeService.getAllRecipes(),
+    queryKey: ["recipes", category],
+    queryFn: () => recipeService.getRecipes(category),
   });
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <RecipesList className={className} />
+      <RecipesList className={className} category={category} />
     </HydrationBoundary>
   );
 };

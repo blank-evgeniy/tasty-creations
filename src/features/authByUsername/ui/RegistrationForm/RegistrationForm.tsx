@@ -89,7 +89,7 @@ export const RegistrationForm = ({
           Создать
         </Button>
         <div>
-          Уже есть аккаунта? -{" "}
+          Уже есть аккаунт? -{" "}
           <Button onClick={onSwap} theme={ButtonTheme.CLEAR} type="button">
             войти
           </Button>
