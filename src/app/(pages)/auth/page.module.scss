@@ -1,3 +1,5 @@
+@import "@/app/styles/mixins.scss";
+
 .page {
   height: calc(100vh - var(--navbar-height));
   padding-bottom: var(--navbar-height);
@@ -16,7 +18,5 @@
   padding: var(--p-xl);
   background-color: var(--accent-color-light);
 
-  -webkit-box-shadow: 4px 4px 8px 0px rgba(172, 67, 1, 0.2);
-  -moz-box-shadow: 4px 4px 8px 0px rgba(172, 67, 1, 0.2);
-  box-shadow: 4px 4px 8px 0px rgba(172, 67, 1, 0.2);
+  @include shadow;
 }

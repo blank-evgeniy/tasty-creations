@@ -5,10 +5,11 @@ import { Merriweather } from "next/font/google";
 import AppLink, { LinkSize } from "@/shared/ui/Link/AppLink";
 import { PagesUrl } from "@/app/config/pagesUrl";
 import Navigation from "./Navigation/Navigation";
-
-import styles from "./Navbar.module.scss";
 import { useAuth } from "@/features/authByUsername";
 import Profile from "./Profile/Profile";
+
+import styles from "./Navbar.module.scss";
+import Link from "next/link";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
@@ -32,7 +33,9 @@ export const Navbar = ({ className }: NavbarProps) => {
       </AppLink>
       <Navigation />
       {!!user ? (
-        <Profile user={user} />
+        <Link href={PagesUrl.PROFILE}>
+          <Profile user={user} />
+        </Link>
       ) : (
         <AppLink href={PagesUrl.AUTH} size={LinkSize.L}>
           Войти

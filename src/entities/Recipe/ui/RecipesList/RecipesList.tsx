@@ -26,7 +26,7 @@ const RecipesList = ({ className, category }: RecipesListProps) => {
   return (
     <div className={classNames(styles.recipes_list, {}, [className])}>
       {data.map((recipe) => (
-        <RecipeCard key={recipe.name} data={recipe} />
+        <RecipeCard key={recipe._id} data={recipe} />
       ))}
     </div>
   );

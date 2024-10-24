@@ -1,0 +1,48 @@
+@import "@/app/styles/mixins.scss";
+
+.container {
+  border-radius: 32px;
+  padding: var(--p-l);
+  background-color: var(--main-color);
+  color: var(--main-color-inverted);
+
+  @include shadow;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 80px;
+  font-weight: bold;
+
+  border-radius: 100%;
+  background-color: var(--main-color-inverted);
+  color: var(--main-color);
+
+  height: 128px;
+  width: 128px;
+
+  margin: 0 auto;
+}
+
+.profile_card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.username {
+  margin-top: 12px;
+  font-size: var(--font-size-l);
+  font-weight: 600;
+}
+
+.logout_btn {
+  display: block;
+  margin-left: auto;
+  margin-top: auto;
+}

@@ -1,0 +1,19 @@
+.page {
+  height: calc(100vh - var(--navbar-height));
+  padding-bottom: var(--navbar-height);
+}
+
+.wrapper {
+  margin: 64px 0;
+  display: flex;
+  gap: 64px;
+}
+
+.recipe_book {
+  width: 100%;
+}
+
+.profile {
+  width: 100%;
+  max-width: 320px;
+}

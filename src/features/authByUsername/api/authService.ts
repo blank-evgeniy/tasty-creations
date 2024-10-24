@@ -24,9 +24,12 @@ class AuthService {
   }
 
   async fetchUser() {
-    const response = await axiosWithAuth.get<UserResponse>("/profile");
-
-    return response.data || null;
+    try {
+      const response = await axiosWithAuth.get<UserResponse>("/profile");
+      return response.data;
+    } catch {
+      return null;
+    }
   }
 }
 

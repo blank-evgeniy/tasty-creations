@@ -16,5 +16,5 @@ export interface Recipe {
 }
 
 export interface RecipeResponse extends Recipe {
-  id: string;
+  _id: string;
 }

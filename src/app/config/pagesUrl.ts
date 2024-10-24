@@ -4,5 +4,8 @@ export enum PagesUrl {
   CATEGORIES = "/categories",
   RECIPES = "/recipes",
   RANDOM = "/random",
-  RECIPES_BOOK = "/recipes-book",
+
+  //private routes
+  RECIPE_BOOK = "/i/recipe-book",
+  PROFILE = "/i/profile",
 }

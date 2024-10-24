@@ -34,6 +34,7 @@ export const useAuth = () => {
     mutationKey: ["logout"],
     mutationFn: () => authService.logout(),
     onSuccess: () => {
+      push(PagesUrl.HOME);
       queryClient.invalidateQueries({ queryKey: ["user"] });
     },
   });

@@ -1,3 +1,5 @@
+@import "@/app/styles/mixins.scss";
+
 .card {
   display: flex;
   flex-direction: column;
@@ -15,9 +17,7 @@
 
   border-radius: 20px;
 
-  -webkit-box-shadow: 4px 4px 8px 0px rgba(172, 67, 1, 0.2);
-  -moz-box-shadow: 4px 4px 8px 0px rgba(172, 67, 1, 0.2);
-  box-shadow: 4px 4px 8px 0px rgba(172, 67, 1, 0.2);
+  @include shadow;
 
   &:hover,
   &:focus {

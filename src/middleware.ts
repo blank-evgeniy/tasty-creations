@@ -18,9 +18,13 @@ export function middleware(request: NextRequest) {
   if (isAuthPage) {
     return NextResponse.next();
   }
+
+  if (!authToken) {
+    return NextResponse.redirect(new URL(PagesUrl.HOME, url));
+  }
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: "/auth",
+  matcher: ["/auth", "/i/:path*"],
 };

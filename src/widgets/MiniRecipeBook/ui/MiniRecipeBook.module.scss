@@ -1,0 +1,35 @@
+@import "@/app/styles/mixins.scss";
+
+.container {
+  border-radius: 32px;
+  padding: var(--p-l);
+  background-color: var(--main-color);
+  color: var(--main-color-inverted);
+
+  @include shadow;
+}
+
+.recipe_book {
+  font-size: var(--font-size-l);
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+}
+
+.recipes {
+  text-decoration: underline;
+  padding-left: 16px;
+}
+
+.open_btn {
+  display: flex !important;
+  justify-content: center;
+
+  margin-top: 32px;
+}
