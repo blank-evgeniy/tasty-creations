@@ -5,7 +5,6 @@ import TextField from "@/shared/ui/TextField/TextField";
 import Button, { ButtonTheme } from "@/shared/ui/Button/Button";
 import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import { AuthForm } from "@/features/authByUsername";
-
 import { useAuth } from "../../api/useAuth";
 
 interface LoginFormProps {
@@ -30,18 +29,6 @@ export const LoginForm = ({ className, onSwap }: LoginFormProps) => {
     console.log(data);
   };
 
-  const nameValidate = (value: string) => {
-    if (value.length < 5) {
-      return "длина не менее 5 символов";
-    }
-  };
-
-  const passwordValidate = (value: string) => {
-    if (value.length < 8) {
-      return "длина не менее 8 символов";
-    }
-  };
-
   return (
     <form
       onSubmit={handleSubmit(submit, error)}
@@ -54,7 +41,6 @@ export const LoginForm = ({ className, onSwap }: LoginFormProps) => {
           type="text"
           {...register("username", {
             required: "введите имя пользователя",
-            validate: nameValidate,
           })}
           maxLength={20}
           errorMessage={errors.username?.message || undefined}
@@ -63,7 +49,6 @@ export const LoginForm = ({ className, onSwap }: LoginFormProps) => {
           label="Пароль"
           {...register("password", {
             required: "введите пароль",
-            validate: passwordValidate,
           })}
           maxLength={20}
           errorMessage={errors.password?.message || undefined}

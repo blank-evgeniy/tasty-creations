@@ -10,7 +10,7 @@ import { useMutation } from "@tanstack/react-query";
 
 interface RegistrationFormProps {
   className?: string;
-  onSwap?: () => void;
+  onSwap: () => void;
 }
 
 export const RegistrationForm = ({
@@ -29,7 +29,7 @@ export const RegistrationForm = ({
     mutationFn: (data: AuthForm) => authService.main("register", data),
     onSuccess() {
       reset();
-      if (onSwap) onSwap();
+      onSwap();
     },
   });
 

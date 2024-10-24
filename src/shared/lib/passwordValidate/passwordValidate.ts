@@ -5,7 +5,6 @@ export const passwordAdvancedValidate: (password: string) => string[] = (
   const hasUpperCase = /[A-Z]/.test(password);
   const hasLowerCase = /[a-z]/.test(password);
   const hasNumbers = /\d/g.test(password);
-  const hasSpecialChars = /[!@#$%^&*(),.?":{}|<>]/.test(password);
   const hasOnlyEnglishLetters = /^[A-Za-z0-9!@#$%^&*(),.?":{}|<>]*$/.test(
     password
   );
@@ -13,7 +12,7 @@ export const passwordAdvancedValidate: (password: string) => string[] = (
   const errors: string[] = [];
 
   if (!hasOnlyEnglishLetters) {
-    errors.push("пароль может содержать только английские буквы и цифры");
+    errors.push("пароль может содержать только английские буквы");
   }
   if (password.length < minLength) {
     errors.push("пароль должен содержать не менее 8 символов");
@@ -26,9 +25,6 @@ export const passwordAdvancedValidate: (password: string) => string[] = (
   }
   if (!hasNumbers) {
     errors.push("пароль должен содержать хотя бы одну цифру");
-  }
-  if (!hasSpecialChars) {
-    errors.push("пароль должен содержать хотя бы один специальный символ");
   }
 
   return errors;
