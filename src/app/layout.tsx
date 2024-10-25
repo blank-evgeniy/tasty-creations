@@ -5,6 +5,7 @@ import { Navbar } from "@/widgets/Navbar";
 import { PageReveal, Transition } from "@/shared/ui/Animation";
 
 import "./globals.scss";
+import { Toaster } from "sonner";
 
 const lora = Lora({ weight: "400", subsets: ["cyrillic"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${lora.className}`}>
         <ReactQueryProvider>
+          <Toaster closeButton />
           <Navbar />
           <Transition />
           <PageReveal>

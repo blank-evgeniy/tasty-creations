@@ -7,6 +7,8 @@ import { SubmitErrorHandler, SubmitHandler, useForm } from "react-hook-form";
 import { passwordAdvancedValidate } from "@/shared/lib/passwordValidate/passwordValidate";
 import { AuthForm, authService } from "@/features/authByUsername";
 import { useMutation } from "@tanstack/react-query";
+import { toast } from "sonner";
+import { errorCatch } from "@/shared/api/error";
 
 interface RegistrationFormProps {
   className?: string;
@@ -30,6 +32,14 @@ export const RegistrationForm = ({
     onSuccess() {
       reset();
       onSwap();
+      toast.success("Пользователь успешно создан :)");
+    },
+    onError(error) {
+      if (errorCatch(error) === "Username already taken") {
+        toast.error("Имя пользователя уже занято :( ", {
+          description: "Пожалуйста, попробуйте другое имя",
+        });
+      }
     },
   });
 
