@@ -1,0 +1,37 @@
+.page {
+  margin: 32px 0;
+}
+
+.loader {
+  margin: 64px auto;
+}
+
+.icon {
+  color: var(--accent-color);
+}
+
+.description {
+  color: var(--main-color);
+  font-size: var(--font-size-xl);
+}
+
+.subtitle {
+  color: var(--blue-color);
+  font-size: var(--font-size-xl);
+}
+
+.ingredients {
+  color: var(--main-color);
+}
+
+.steps {
+  list-style-position: inside;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding-top: 16px;
+}

@@ -1,7 +1,6 @@
 export interface Ingredient {
   name: string;
-  value?: number;
-  unit?: string;
+  quantity: string;
 }
 
 export interface Recipe {
@@ -16,7 +15,7 @@ export interface Recipe {
   icon?: string;
 }
 
-export interface RecipeResponse {
+export interface RecipesResponse {
   recipes: Recipe[];
   currentPage: number;
   totalRecipes: number;

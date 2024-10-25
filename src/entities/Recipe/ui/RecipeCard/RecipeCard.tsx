@@ -6,6 +6,7 @@ import FireIcon from "@/shared/assets/icons/flame.svg";
 import { Recipe } from "../../model/recipe";
 import Button, { ButtonSize } from "@/shared/ui/Button/Button";
 import { getClientIcon } from "@/shared/ui/ClientIcon";
+import AppLink, { LinkColor, LinkSize } from "@/shared/ui/Link/AppLink";
 
 interface RecipeCardProps {
   className?: string;
@@ -13,7 +14,7 @@ interface RecipeCardProps {
 }
 
 export const RecipeCard = ({ className, data }: RecipeCardProps) => {
-  const { name, calories, time, icon } = data;
+  const { name, calories, time, icon, _id } = data;
 
   const Icon = getClientIcon(icon);
 
@@ -24,7 +25,14 @@ export const RecipeCard = ({ className, data }: RecipeCardProps) => {
       </div>
       <div className={styles.content}>
         <div className={styles.content_header}>
-          <p className={styles.name}>{name}</p>
+          <AppLink
+            color={LinkColor.SECONDARY}
+            size={LinkSize.L}
+            href={`/${_id}`}
+            className={styles.name}
+          >
+            {name}
+          </AppLink>
 
           <div className={styles.info}>
             <p className={styles.time}>
