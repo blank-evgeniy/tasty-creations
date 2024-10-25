@@ -7,6 +7,7 @@ import { RecipeCard } from "../RecipeCard/RecipeCard";
 import { Reveal } from "@/shared/ui/Animation";
 import { Pagination } from "@/widgets/Pagination";
 import { useState } from "react";
+import Loader from "@/shared/ui/Loader/Loader";
 
 interface RecipesListProps {
   className?: string;
@@ -22,11 +23,16 @@ const RecipesList = ({ className, category }: RecipesListProps) => {
     staleTime: 30 * 1000,
   });
 
+  if (isLoading)
+    return (
+      <Reveal delay={0.3}>
+        <Loader className={styles.loader} />
+      </Reveal>
+    );
+
   if (error) return <div>{error.message}</div>;
 
-  if (isLoading) return <div>Loading...</div>;
-
-  if (!data) return <div>no data</div>;
+  if (!data) return <div>Данные не найдены</div>;
 
   const paginateHandler = (pageNumber: number) => {
     setCurrentPage(pageNumber);

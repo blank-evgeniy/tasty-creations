@@ -18,7 +18,7 @@ export const RecipeListHydration = async ({
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["recipes", category],
+    queryKey: ["recipes", category, 1],
     queryFn: () => recipeService.getRecipes(category),
   });
 

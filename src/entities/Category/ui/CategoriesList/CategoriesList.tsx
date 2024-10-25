@@ -4,6 +4,7 @@ import styles from "./CategoriesList.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { categoryService } from "../../api/categoryService";
 import { CategoryCard } from "../CategoryCard/CategoryCard";
+import Loader from "@/shared/ui/Loader/Loader";
 
 interface CategoriesListProps {
   className?: string;
@@ -16,11 +17,11 @@ const CategoriesList = ({ className }: CategoriesListProps) => {
     staleTime: 5 * 1000 * 60,
   });
 
+  if (isLoading) return <Loader className={styles.loader} />;
+
   if (error) return <div>{error.message}</div>;
 
-  if (isLoading) return <div>Loading...</div>;
-
-  if (!data) return <div>no data</div>;
+  if (!data) return <div>Данные не найдены</div>;
 
   return (
     <div className={classNames(styles.container, {}, [className])}>

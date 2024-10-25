@@ -1,0 +1,25 @@
+.loader {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  box-shadow: 32px 0 var(--main-color), -32px 0 var(--main-color);
+  position: relative;
+  animation: flash 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash {
+  0% {
+    background-color: var(--accent-color);
+    box-shadow: 32px 0 var(--accent-color), -32px 0 var(--main-color);
+  }
+  50% {
+    background-color: var(--main-color);
+    box-shadow: 32px 0 var(--accent-color), -32px 0 var(--accent-color);
+  }
+  100% {
+    background-color: var(--accent-color);
+    box-shadow: 32px 0 var(--main-color), -32px 0 var(--accent-color);
+  }
+}
