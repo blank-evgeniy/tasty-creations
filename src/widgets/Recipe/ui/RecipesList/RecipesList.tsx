@@ -2,7 +2,7 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./RecipesList.module.scss";
 import { useQuery } from "@tanstack/react-query";
-import { recipeService } from "../../api/recipeService";
+import { recipeService } from "../../../../entities/Recipe/api/recipeService";
 import { RecipeCard } from "../RecipeCard/RecipeCard";
 import { Reveal } from "@/shared/ui/Animation";
 import { Pagination } from "@/widgets/Pagination";

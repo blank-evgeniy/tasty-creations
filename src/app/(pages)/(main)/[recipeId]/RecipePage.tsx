@@ -6,10 +6,9 @@ import { recipeService } from "@/entities/Recipe/api/recipeService";
 import Loader from "@/shared/ui/Loader/Loader";
 import { Reveal } from "@/shared/ui/Animation";
 import Heading from "@/shared/ui/Heading/Heading";
-import Button, { ButtonSize } from "@/shared/ui/Button/Button";
-import BookIcon from "@/shared/assets/icons/book-heart.svg";
 import IngredientIcon from "@/shared/assets/icons/cherry.svg";
 import { getClientIcon } from "@/shared/ui/ClientIcon";
+import { UpdateRecipeBookButton } from "@/features/updateRecipeBook";
 
 interface RecipePageProps {
   className?: string;
@@ -79,9 +78,7 @@ const RecipePage = ({ className, recipeId }: RecipePageProps) => {
         </Reveal>
 
         <Reveal delay={1}>
-          <Button className={styles.button} size={ButtonSize.S}>
-            <BookIcon /> добавить в книгу рецептов
-          </Button>
+          <UpdateRecipeBookButton recipeId={recipeId} />
         </Reveal>
       </div>
     </div>

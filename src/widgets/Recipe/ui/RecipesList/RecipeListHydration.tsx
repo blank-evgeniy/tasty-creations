@@ -3,7 +3,7 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import { recipeService } from "../../api/recipeService";
+import { recipeService } from "../../../../entities/Recipe/api/recipeService";
 import RecipesList from "./RecipesList";
 
 interface RecipeListHydrationProps {

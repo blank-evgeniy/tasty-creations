@@ -1,4 +1,3 @@
-import { RecipesList } from "@/entities/Recipe";
 import styles from "./page.module.scss";
 import React from "react";
 import { categoryService } from "@/entities/Category";
@@ -9,6 +8,7 @@ import {
 } from "@tanstack/react-query";
 import { RecipesHeading } from "./Heading";
 import { Reveal } from "@/shared/ui/Animation";
+import { RecipesList } from "@/widgets/Recipe";
 
 const Recipes = async ({ params }: { params: { category: string } }) => {
   const queryClient = new QueryClient();

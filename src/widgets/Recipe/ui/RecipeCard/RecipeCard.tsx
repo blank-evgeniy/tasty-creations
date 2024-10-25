@@ -1,12 +1,11 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./RecipeCard.module.scss";
 import ClockIcon from "@/shared/assets/icons/clock.svg";
-import BookIcon from "@/shared/assets/icons/book-heart.svg";
 import FireIcon from "@/shared/assets/icons/flame.svg";
-import { Recipe } from "../../model/recipe";
-import Button, { ButtonSize } from "@/shared/ui/Button/Button";
+import { Recipe } from "../../../../entities/Recipe/model/recipe";
 import { getClientIcon } from "@/shared/ui/ClientIcon";
 import AppLink, { LinkColor, LinkSize } from "@/shared/ui/Link/AppLink";
+import { UpdateRecipeBookButton } from "@/features/updateRecipeBook";
 
 interface RecipeCardProps {
   className?: string;
@@ -45,9 +44,7 @@ export const RecipeCard = ({ className, data }: RecipeCardProps) => {
         </div>
 
         <div className={styles.content_footer}>
-          <Button className={styles.button} size={ButtonSize.S}>
-            <BookIcon /> добавить в книгу рецептов
-          </Button>
+          <UpdateRecipeBookButton recipeId={_id} />
         </div>
       </div>
     </div>
