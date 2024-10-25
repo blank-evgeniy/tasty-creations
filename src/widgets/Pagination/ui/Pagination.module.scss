@@ -1,0 +1,14 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 32px;
+
+  max-width: 600px;
+}
+
+.numbers_list {
+  display: flex;
+  gap: 8px;
+}

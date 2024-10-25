@@ -5,6 +5,7 @@ export interface Ingredient {
 }
 
 export interface Recipe {
+  _id: string;
   name: string;
   category: string;
   description: string;
@@ -15,6 +16,9 @@ export interface Recipe {
   icon?: string;
 }
 
-export interface RecipeResponse extends Recipe {
-  _id: string;
+export interface RecipeResponse {
+  recipes: Recipe[];
+  currentPage: number;
+  totalRecipes: number;
+  totalPages: number;
 }
