@@ -3,6 +3,7 @@ import NavLink from "../../../../shared/ui/NavLink/NavLink";
 
 import styles from "./Navigation.module.scss";
 import { PagesUrl } from "@/app/config/pagesUrl";
+import { RandomRecipeButton } from "@/features/getRandomRecipe";
 
 interface NavigationProps {
   className?: string;
@@ -16,7 +17,6 @@ interface NavigationLink {
 const NavLinks: NavigationLink[] = [
   { href: PagesUrl.CATEGORIES, title: "Категории" },
   { href: PagesUrl.RECIPES, title: "Рецепты" },
-  { href: PagesUrl.RANDOM, title: "Что приготовить?" },
 ];
 
 const Navigation = ({ className }: NavigationProps) => {
@@ -28,6 +28,9 @@ const Navigation = ({ className }: NavigationProps) => {
             <NavLink href={link.href}>{link.title}</NavLink>
           </li>
         ))}
+        <li key={"random"}>
+          <RandomRecipeButton />
+        </li>
       </ul>
     </nav>
   );

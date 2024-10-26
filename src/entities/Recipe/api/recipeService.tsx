@@ -25,6 +25,11 @@ class RecipeService {
 
     return response.data;
   }
+
+  async getRandomRecipeId() {
+    const response = await axiosClassic.get<string>(`${this.BASE_URL}/random`);
+    return response.data;
+  }
 }
 
 export const recipeService = new RecipeService();
