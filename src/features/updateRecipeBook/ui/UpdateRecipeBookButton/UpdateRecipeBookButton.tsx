@@ -50,7 +50,7 @@ export const UpdateRecipeBookButton = ({
     );
 
   const notInBook = data
-    ? !data.map((recipe) => recipe._id).includes(recipeId)
+    ? !data.recipes.map((recipe) => recipe._id).includes(recipeId)
     : true;
 
   if (notInBook)

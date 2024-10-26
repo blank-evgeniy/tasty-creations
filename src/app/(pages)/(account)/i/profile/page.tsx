@@ -4,6 +4,14 @@ import { ProfileCard } from "@/widgets/ProfileCard";
 import { MiniRecipeBook } from "@/widgets/MiniRecipeBook";
 import { Reveal } from "@/shared/ui/Animation";
 
+export const metadata = {
+  title: "Профиль | Tasty Creations",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 const ProfilePage = () => {
   return (
     <div className={styles.page}>

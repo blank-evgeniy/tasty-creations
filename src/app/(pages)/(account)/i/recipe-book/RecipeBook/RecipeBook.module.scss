@@ -1,0 +1,36 @@
+.recipe_book {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.img_container {
+  position: sticky;
+  top: var(--navbar-height);
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.book_image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - var(--navbar-height) - 64px);
+
+  object-fit: contain;
+  border-radius: 32px;
+}
+
+.subtitle {
+  font-size: var(--font-size-l);
+}
+
+.recipes_list {
+  padding-top: 32px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

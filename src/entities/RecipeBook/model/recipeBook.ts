@@ -1,3 +1,6 @@
 import { Recipe } from "@/entities/Recipe";
 
-export type RecipeBook = Recipe[];
+export interface RecipeBook {
+  recipes: Recipe[];
+  totalRecipes: number;
+}

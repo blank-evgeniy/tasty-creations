@@ -14,8 +14,10 @@
 
   display: flex;
   flex-direction: column;
-
+  justify-content: space-between;
   gap: 8px;
+
+  height: 100%;
 }
 
 .title {
@@ -23,8 +25,9 @@
 }
 
 .recipes {
-  text-decoration: underline;
-  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .open_btn {

@@ -1,25 +1,41 @@
+"use client";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./MiniRecipeBook.module.scss";
 import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
 import { PagesUrl } from "@/app/config/pagesUrl";
+import { useQuery } from "@tanstack/react-query";
+import { recipeBookService } from "@/entities/RecipeBook";
+import { useAuth } from "@/features/authByUsername";
 
 interface MiniRecipeBookProps {
   className?: string;
 }
 
 export const MiniRecipeBook = ({ className }: MiniRecipeBookProps) => {
+  const { user } = useAuth();
+
+  const { data } = useQuery({
+    queryKey: ["recipeBook"],
+    queryFn: () => recipeBookService.getRecipeBook(),
+  });
+
+  if (!user || !data) return null;
+
+  const { recipes, totalRecipes } = data;
+  const latestRecipes = recipes.slice(-5);
+
   return (
     <div className={classNames(styles.container, {}, [className])}>
       <div className={styles.recipe_book}>
         <p className={styles.title}>Книга рецептов</p>
-        <p>Всего в вашей книге рецептов: 5</p>
+        <p>Всего в вашей книге рецептов: {totalRecipes}</p>
         <p>Последние сохраненные рецепты:</p>
         <div className={styles.recipes}>
-          <p>Блины</p>
-          <p>Блины</p>
-          <p>Блины</p>
-          <p>Блины</p>
-          <p>Блины</p>
+          {latestRecipes.map((recipe) => (
+            <AppLink href={`/${recipe._id}`} key={recipe._id}>
+              {recipe.name}
+            </AppLink>
+          ))}
         </div>
         <AppLink
           href={PagesUrl.RECIPE_BOOK}
