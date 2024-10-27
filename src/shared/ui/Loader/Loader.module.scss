@@ -5,7 +5,6 @@
   border-radius: 50%;
   background-color: var(--main-color);
   box-shadow: 32px 0 var(--main-color), -32px 0 var(--main-color);
-  position: relative;
   animation: flash 0.5s ease-out infinite alternate;
 }
 

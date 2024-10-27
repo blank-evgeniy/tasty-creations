@@ -1,4 +1,5 @@
+export { CategoryListLite } from "./ui/CategoryListLite/CategoryListLite";
 export { categoryService } from "./api/categoryService";
-export { CategoriesListHydration as CategoriesList } from "./ui/CategoriesList/CategoriesListHydration";
+export { CategoryListHydration as CategoryList } from "./ui/CategoryList/CategoryListHydration";
 export { CategoryCard } from "./ui/CategoryCard/CategoryCard";
 export type { Category } from "./model/category";

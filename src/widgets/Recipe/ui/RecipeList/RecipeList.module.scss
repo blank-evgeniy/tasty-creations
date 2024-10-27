@@ -1,5 +1,6 @@
 .recipes_list {
   max-width: 800px;
+  width: 100%;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -13,4 +14,9 @@
 
 .loader {
   margin: 64px auto;
+}
+
+.content {
+  display: flex;
+  gap: 32px;
 }

@@ -5,8 +5,8 @@ import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
 import MoveRightIcon from "@/shared/assets/icons/move-right.svg";
 import { PagesUrl } from "@/app/config/pagesUrl";
 import { Reveal } from "@/shared/ui/Animation";
-import { CategoriesList } from "@/entities/Category";
 import Heading from "@/shared/ui/Heading/Heading";
+import { CategoryList } from "@/entities/Category";
 
 export default function Categories() {
   return (
@@ -22,7 +22,7 @@ export default function Categories() {
           </h2>
         </Reveal>
         <Reveal delay={0.6}>
-          <CategoriesList className={styles.categories_list} />
+          <CategoryList className={styles.categories_list} />
         </Reveal>
 
         <Reveal delay={0.8}>

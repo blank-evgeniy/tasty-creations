@@ -22,6 +22,10 @@ export const Pagination = ({
     pageNumbers.push(i);
   }
 
+  if (pagesCount < 2) {
+    return null;
+  }
+
   return (
     <div className={classNames(styles.pagination, {}, [className])}>
       <Button

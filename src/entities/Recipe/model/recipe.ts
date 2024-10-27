@@ -21,3 +21,12 @@ export interface RecipesResponse {
   totalRecipes: number;
   totalPages: number;
 }
+
+export interface RecipeRequestParams {
+  category?: string | null;
+  page?: number | null;
+  limit?: number | null;
+  sortBy?: string | null;
+  order?: string | null;
+  search?: string | null;
+}

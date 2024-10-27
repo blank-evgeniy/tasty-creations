@@ -2,7 +2,7 @@ import styles from "./page.module.scss";
 import React from "react";
 import { Reveal } from "@/shared/ui/Animation";
 import Heading from "@/shared/ui/Heading/Heading";
-import { RecipesList } from "@/widgets/Recipe";
+import { RecipePagination } from "@/widgets/Recipe";
 
 const Recipes = async () => {
   return (
@@ -11,7 +11,7 @@ const Recipes = async () => {
         <Heading>Рецепты</Heading>
       </Reveal>
 
-      <RecipesList className={styles.recipes_list} />
+      <RecipePagination />
     </div>
   );
 };

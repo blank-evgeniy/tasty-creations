@@ -1,0 +1,22 @@
+.content {
+  margin: 32px 0;
+
+  display: flex;
+  gap: 32px;
+}
+
+.pagination {
+  margin: 0 auto;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.menu_title {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--blue-color);
+}

@@ -1,1 +1,1 @@
-export type { Recipe, Ingredient } from "./model/recipe";
+export type { Recipe, Ingredient, RecipeRequestParams } from "./model/recipe";

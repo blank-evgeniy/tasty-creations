@@ -8,7 +8,7 @@ import {
 } from "@tanstack/react-query";
 import { RecipesHeading } from "./Heading";
 import { Reveal } from "@/shared/ui/Animation";
-import { RecipesList } from "@/widgets/Recipe";
+import { RecipePagination } from "@/widgets/Recipe";
 
 const Recipes = async ({ params }: { params: { category: string } }) => {
   const queryClient = new QueryClient();
@@ -26,7 +26,7 @@ const Recipes = async ({ params }: { params: { category: string } }) => {
         </HydrationBoundary>
       </Reveal>
 
-      <RecipesList category={params.category} className={styles.recipes_list} />
+      <RecipePagination category={params.category} />
     </div>
   );
 };

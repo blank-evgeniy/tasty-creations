@@ -4,15 +4,15 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import { categoryService } from "../../api/categoryService";
-import CategoriesList from "./CategoriesList";
+import CategoryList from "./CategoryList";
 
-interface CategoriesListHydrationProps {
+interface CategoryListHydrationProps {
   className: string;
 }
 
-export const CategoriesListHydration = async ({
+export const CategoryListHydration = async ({
   className,
-}: CategoriesListHydrationProps) => {
+}: CategoryListHydrationProps) => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
@@ -22,7 +22,7 @@ export const CategoriesListHydration = async ({
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <CategoriesList className={className} />
+      <CategoryList className={className} />
     </HydrationBoundary>
   );
 };

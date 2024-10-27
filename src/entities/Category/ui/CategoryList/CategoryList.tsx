@@ -1,16 +1,16 @@
 "use client";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import styles from "./CategoriesList.module.scss";
+import styles from "./CategoryList.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { categoryService } from "../../api/categoryService";
 import { CategoryCard } from "../CategoryCard/CategoryCard";
 import Loader from "@/shared/ui/Loader/Loader";
 
-interface CategoriesListProps {
+interface CategoryListProps {
   className?: string;
 }
 
-const CategoriesList = ({ className }: CategoriesListProps) => {
+const CategoryList = ({ className }: CategoryListProps) => {
   const { data, error, isLoading } = useQuery({
     queryKey: ["categories"],
     queryFn: () => categoryService.getAllCategories(),
@@ -32,4 +32,4 @@ const CategoriesList = ({ className }: CategoriesListProps) => {
   );
 };
 
-export default CategoriesList;
+export default CategoryList;
