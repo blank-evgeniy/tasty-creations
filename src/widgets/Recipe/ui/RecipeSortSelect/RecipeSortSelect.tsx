@@ -67,6 +67,7 @@ const RecipeSortSelect = memo(function RecipeSortSelect({
           }),
         }}
         placeholder="Сортировать по"
+        instanceId={"recipe_sort"}
       />
     </div>
   );

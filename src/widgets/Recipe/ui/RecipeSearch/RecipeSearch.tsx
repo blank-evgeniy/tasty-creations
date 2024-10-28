@@ -59,6 +59,7 @@ const RecipeSearch = ({ className }: RecipeSearchProps) => {
         onBlur={() => setIsFocuse(false)}
         placeholder="Поиск..."
         type="text"
+        id="recipe_search"
       />
 
       {value.length > 0 && (

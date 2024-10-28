@@ -2,6 +2,8 @@ import { dehydrate, QueryClient } from "@tanstack/query-core";
 import { recipeService } from "@/entities/Recipe/api/recipeService";
 import { HydrationBoundary } from "@tanstack/react-query";
 import { RecipePagination } from "./RecipePagination";
+import { Suspense } from "react";
+import Loader from "@/shared/ui/Loader/Loader";
 
 interface RecipePaginationHydrationProps {
   className?: string;
@@ -26,7 +28,22 @@ export const RecipePaginationHydration = async ({
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <RecipePagination category={category} className={className} />
+      <Suspense
+        fallback={
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              justifyContent: "center",
+              paddingTop: 32,
+            }}
+          >
+            <Loader />
+          </div>
+        }
+      >
+        <RecipePagination category={category} className={className} />
+      </Suspense>
     </HydrationBoundary>
   );
 };
