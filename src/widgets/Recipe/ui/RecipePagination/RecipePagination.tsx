@@ -9,6 +9,7 @@ import { CategoryListLite } from "@/entities/Category";
 import { Reveal } from "@/shared/ui/Animation";
 import RecipeSortSelect from "../RecipeSortSelect/RecipeSortSelect";
 import { useQueryParams } from "@/shared/hooks/useQueryParams";
+import RecipeSearch from "../RecipeSearch/RecipeSearch";
 
 interface RecipePaginationProps {
   className?: string;
@@ -53,6 +54,10 @@ export const RecipePagination = ({
 
   return (
     <div className={className}>
+      <Reveal>
+        <RecipeSearch className={styles.search} />
+      </Reveal>
+
       <div className={styles.content}>
         <RecipeList isLoading={isLoading} data={data?.recipes} />
         <Reveal delay={0.4}>

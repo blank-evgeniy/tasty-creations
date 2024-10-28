@@ -1,0 +1,26 @@
+.search {
+  border-radius: 32px;
+  background-color: var(--blue-color);
+  color: var(--main-color-inverted);
+
+  padding: 8px 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 16px;
+
+  &__focused,
+  &:hover {
+    box-shadow: 0 0 0 2px var(--accent-color);
+  }
+}
+
+.input {
+  width: 100%;
+
+  &::placeholder {
+    color: rgb(172, 172, 172);
+  }
+}
