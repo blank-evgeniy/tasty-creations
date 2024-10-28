@@ -22,3 +22,28 @@
     box-shadow: 32px 0 var(--main-color), -32px 0 var(--accent-color);
   }
 }
+
+.loader_mini {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  box-shadow: 16px 0 var(--main-color), -16px 0 var(--main-color);
+  animation: flash_mini 0.5s ease-out infinite alternate;
+}
+
+@keyframes flash_mini {
+  0% {
+    background-color: var(--accent-color);
+    box-shadow: 16px 0 var(--accent-color), -16px 0 var(--main-color);
+  }
+  50% {
+    background-color: var(--main-color);
+    box-shadow: 16px 0 var(--accent-color), -16px 0 var(--accent-color);
+  }
+  100% {
+    background-color: var(--accent-color);
+    box-shadow: 16px 0 var(--main-color), -16px 0 var(--accent-color);
+  }
+}

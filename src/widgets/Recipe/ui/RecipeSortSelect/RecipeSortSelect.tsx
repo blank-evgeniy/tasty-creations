@@ -1,6 +1,6 @@
 import { useQueryParams } from "@/shared/hooks/useQueryParams";
 import { useSearchParams } from "next/navigation";
-import { useCallback } from "react";
+import { memo, useCallback } from "react";
 import Select, { SingleValue } from "react-select";
 
 interface RecipeSortSelectProps {
@@ -17,7 +17,9 @@ const options = [
   { value: "calories", label: "по калориям" },
 ];
 
-const RecipeSortSelect = ({ className }: RecipeSortSelectProps) => {
+const RecipeSortSelect = memo(function RecipeSortSelect({
+  className,
+}: RecipeSortSelectProps) {
   const { createQueryParam, removeQueryParam } = useQueryParams();
   const searchParams = useSearchParams();
   const sortBy = searchParams.get("sortBy");
@@ -68,6 +70,6 @@ const RecipeSortSelect = ({ className }: RecipeSortSelectProps) => {
       />
     </div>
   );
-};
+});
 
 export default RecipeSortSelect;

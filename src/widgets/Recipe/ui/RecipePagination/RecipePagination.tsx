@@ -36,7 +36,7 @@ export const RecipePagination = ({
     (key) => !!key
   );
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["recipes", ...queryKey],
     queryFn: () =>
       recipeService.getRecipes({
@@ -49,14 +49,12 @@ export const RecipePagination = ({
     staleTime: 30 * 1000,
   });
 
-  if (!data) return null;
-
-  const pagesCount = data.totalPages;
+  const pagesCount = data?.totalPages;
 
   return (
     <div className={className}>
       <div className={styles.content}>
-        <RecipeList recipes={data.recipes} />
+        <RecipeList isLoading={isLoading} data={data?.recipes} />
         <Reveal delay={0.4}>
           <div className={styles.menu}>
             {!category && (
@@ -74,14 +72,16 @@ export const RecipePagination = ({
         </Reveal>
       </div>
 
-      <Reveal delay={data.recipes.length * 0.1 + 0.2}>
-        <Pagination
-          className={styles.pagination}
-          currentPage={currentPage}
-          pagesCount={pagesCount}
-          onPaginate={paginateHandler}
-        />
-      </Reveal>
+      {data && (
+        <Reveal delay={data.recipes.length * 0.1 + 0.2}>
+          <Pagination
+            className={styles.pagination}
+            currentPage={currentPage}
+            pagesCount={pagesCount || 1}
+            onPaginate={paginateHandler}
+          />
+        </Reveal>
+      )}
     </div>
   );
 };

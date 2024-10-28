@@ -8,6 +8,16 @@
   gap: 48px 32px;
 }
 
+.recipes_list__error {
+  max-width: 800px;
+  width: 100%;
+
+  padding-top: 32px;
+
+  display: flex;
+  justify-content: center;
+}
+
 .pagination {
   margin: 48px auto 16px auto;
 }
