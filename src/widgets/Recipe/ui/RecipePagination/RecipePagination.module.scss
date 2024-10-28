@@ -13,10 +13,13 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  min-width: 320px;
 }
 
 .menu_title {
   font-size: var(--font-size-xl);
   font-weight: bold;
   color: var(--blue-color);
+
+  margin-bottom: 16px;
 }
