@@ -40,13 +40,21 @@ const RecipeBook = ({ className }: RecipeBookProps) => {
         <Reveal delay={0.4}>
           <p className={styles.subtitle}>Список ваших любимых рецептов</p>
         </Reveal>
-        <div className={styles.recipes_list}>
-          {data.recipes.reverse().map((recipe, index) => (
-            <Reveal key={recipe._id} delay={0.5 + 0.1 * index}>
-              <RecipeBookItem recipe={recipe} />
-            </Reveal>
-          ))}
-        </div>
+        {data.totalRecipes > 0 ? (
+          <div className={styles.recipes_list}>
+            {data.recipes.reverse().map((recipe, index) => (
+              <Reveal key={recipe._id} delay={0.5 + 0.1 * index}>
+                <RecipeBookItem recipe={recipe} />
+              </Reveal>
+            ))}
+          </div>
+        ) : (
+          <Reveal delay={0.6}>
+            <p style={{ paddingTop: 32 }}>
+              {"Ваша книга рецептов пока что пуста :("}
+            </p>
+          </Reveal>
+        )}
       </div>
     </div>
   );
