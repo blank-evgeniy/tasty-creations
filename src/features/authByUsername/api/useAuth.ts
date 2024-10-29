@@ -5,6 +5,7 @@ import { AUTH_TOKEN_COOKIE } from "@/shared/consts/consts";
 import { AuthForm } from "../model/authType";
 import { useRouter } from "next/navigation";
 import { PagesUrl } from "@/app/config/pagesUrl";
+import { toast } from "sonner";
 
 export const useAuth = () => {
   const queryClient = useQueryClient();
@@ -26,7 +27,12 @@ export const useAuth = () => {
     mutationKey: ["login"],
     mutationFn: (data: AuthForm) => authService.main("login", data),
     onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["user"] });
       push(PagesUrl.HOME);
+      toast("Вы успешно вошли в аккаунт");
+    },
+    onError: () => {
+      toast("Данные пользователя введены неверно");
     },
   });
 
@@ -36,6 +42,7 @@ export const useAuth = () => {
     onSuccess: () => {
       push(PagesUrl.HOME);
       queryClient.invalidateQueries({ queryKey: ["user"] });
+      toast("Вы успешно вышли из аккаунта");
     },
   });
 
