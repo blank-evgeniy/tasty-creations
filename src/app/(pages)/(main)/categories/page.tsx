@@ -8,6 +8,10 @@ import { Reveal } from "@/shared/ui/Animation";
 import Heading from "@/shared/ui/Heading/Heading";
 import { CategoryList } from "@/entities/Category";
 
+export const metadata = {
+  title: "Категории | Tasty Creations",
+};
+
 export default function Categories() {
   return (
     <div className={styles.page}>

@@ -4,6 +4,10 @@ import { HydrationBoundary } from "@tanstack/react-query";
 import React from "react";
 import RecipePage from "./RecipePage";
 
+export const metadata = {
+  title: "Рецепты | Tasty Creations",
+};
+
 const RecipePageHydration = async ({
   params,
 }: {
