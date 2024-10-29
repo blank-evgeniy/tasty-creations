@@ -1,3 +1,5 @@
+@import "@/app/styles/mixins.scss";
+
 .container {
   position: absolute;
   height: var(--navbar-height);
@@ -32,4 +34,23 @@
 .links {
   display: flex;
   gap: 24px;
+}
+
+.mobile_navigation {
+  display: none;
+}
+
+@include mediaLaptop {
+  .container {
+    flex-direction: row-reverse;
+  }
+  .navigation {
+    display: none;
+  }
+  .mobile_navigation {
+    display: block;
+  }
+  .title {
+    display: none;
+  }
 }

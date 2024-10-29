@@ -1,0 +1,47 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+
+  z-index: 20;
+  overflow: hidden;
+
+  background-color: var(--main-color);
+}
+
+.links {
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+  gap: 16px;
+}
+
+.close_icon {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+
+  color: var(--main-color-inverted);
+}
+
+.menu_icon {
+  color: var(--main-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  color: var(--accent-color);
+  font-weight: 600;
+
+  padding-bottom: 32px;
+}

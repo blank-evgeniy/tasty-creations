@@ -10,6 +10,7 @@ import Profile from "./Profile/Profile";
 
 import styles from "./Navbar.module.scss";
 import Link from "next/link";
+import MobileNavigation from "./MobileNavigation/MobileNavigation";
 
 const merriweather = Merriweather({ weight: "700", subsets: ["cyrillic"] });
 
@@ -31,7 +32,8 @@ export const Navbar = ({ className }: NavbarProps) => {
         <AppIcon />
         Tasty Creations
       </AppLink>
-      <Navigation />
+      <Navigation className={styles.navigation} />
+      <MobileNavigation className={styles.mobile_navigation} />
       {!!user ? (
         <Link href={PagesUrl.PROFILE}>
           <Profile user={user} />
