@@ -10,6 +10,7 @@ import { Reveal } from "@/shared/ui/Animation";
 import RecipeSortSelect from "../RecipeSortSelect/RecipeSortSelect";
 import { useQueryParams } from "@/shared/hooks/useQueryParams";
 import RecipeSearch from "../RecipeSearch/RecipeSearch";
+import { notFound } from "next/navigation";
 
 interface RecipePaginationProps {
   className?: string;
@@ -37,7 +38,7 @@ export const RecipePagination = ({
     (key) => !!key
   );
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["recipes", ...queryKey],
     queryFn: () =>
       recipeService.getRecipes({
@@ -51,6 +52,8 @@ export const RecipePagination = ({
   });
 
   const pagesCount = data?.totalPages;
+
+  if (isError) notFound();
 
   return (
     <div className={className}>

@@ -24,9 +24,8 @@ const RecipePage = ({ className, recipeId }: RecipePageProps) => {
 
   if (isLoading) return <Loader className={styles.loader} />;
 
-  if (error) return <div>{error.message}</div>;
-
-  if (!data) return <div>Рецепт не найден</div>;
+  if (error || !data)
+    return <div className={styles.error_message}>Рецепт не найден</div>;
 
   const { name, description, calories, time, ingredients, steps, icon } = data;
 

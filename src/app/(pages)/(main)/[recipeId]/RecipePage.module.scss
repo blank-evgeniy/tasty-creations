@@ -35,3 +35,10 @@
 
   padding-top: 16px;
 }
+
+.error_message {
+  padding-top: 32px;
+
+  color: var(--danger-color);
+  font-size: var(--font-size-l);
+}
