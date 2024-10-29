@@ -21,13 +21,14 @@ export const UpdateRecipeBookButton = ({
 }: UpdateRecipeBookButtonProps) => {
   const { user } = useAuth();
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["recipeBook"],
     queryFn: () => recipeBookService.getRecipeBook(),
     staleTime: 30 * 1000,
   });
 
-  const { addToRecipeBook, removeFromRecipeBook } = useUpdateRecipeBook();
+  const { addToRecipeBook, removeFromRecipeBook, isPending } =
+    useUpdateRecipeBook();
 
   const onAddToBook = useCallback(() => {
     addToRecipeBook(recipeId);
@@ -58,6 +59,7 @@ export const UpdateRecipeBookButton = ({
       <Button
         onClick={onAddToBook}
         className={classNames(styles.button, {}, [className])}
+        disabled={isPending || isLoading}
       >
         <BookIcon /> Добавить в книгу рецептов
       </Button>
@@ -68,6 +70,7 @@ export const UpdateRecipeBookButton = ({
       onClick={onRemoveFromBook}
       color={ButtonColor.SECONDARY}
       className={classNames(styles.button, {}, [className])}
+      disabled={isPending || isLoading}
     >
       <BookIcon /> Удалить из книги рецептов
     </Button>

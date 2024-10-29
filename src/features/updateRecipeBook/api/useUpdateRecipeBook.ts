@@ -31,5 +31,6 @@ export const useUpdateRecipeBook = () => {
   return {
     addToRecipeBook: addToBookMutation.mutate,
     removeFromRecipeBook: removeFromBookMutation.mutate,
+    isPending: addToBookMutation.isPending || removeFromBookMutation.isPending,
   };
 };

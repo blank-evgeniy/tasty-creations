@@ -14,7 +14,7 @@ interface RecipeBookItemProps {
 
 const RecipeBookItem = ({ className, recipe }: RecipeBookItemProps) => {
   const { name, icon, _id } = recipe;
-  const { removeFromRecipeBook } = useUpdateRecipeBook();
+  const { removeFromRecipeBook, isPending } = useUpdateRecipeBook();
 
   const Icon = getClientIcon(icon);
 
@@ -23,7 +23,9 @@ const RecipeBookItem = ({ className, recipe }: RecipeBookItemProps) => {
       <AppLink href={`/${_id}`}>
         <Icon height={24} width={24} /> {name}
       </AppLink>
-      <Button onClick={() => removeFromRecipeBook(_id)}>Удалить</Button>
+      <Button disabled={isPending} onClick={() => removeFromRecipeBook(_id)}>
+        Удалить
+      </Button>
     </div>
   );
 };
