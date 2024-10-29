@@ -32,7 +32,7 @@ export default function Categories() {
         <Reveal delay={0.8}>
           <div className={styles.link_section}>
             <h2 style={{ display: "inline" }} className={styles.subtitle}>
-              Или перейдите к списку всех рецептов
+              Или перейдите ко списку всех рецептов
             </h2>
 
             <AppLink
@@ -41,7 +41,7 @@ export default function Categories() {
               className={styles.button}
             >
               <div className={styles.button_content}>
-                <MoveRightIcon />
+                <MoveRightIcon width={24} height={24} />
                 <p>Все рецепты</p>
               </div>
             </AppLink>

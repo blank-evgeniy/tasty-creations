@@ -1,7 +1,9 @@
 "use client";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./Pagination.module.scss";
-import Button, { ButtonColor } from "@/shared/ui/Button/Button";
+import Button, { ButtonColor, ButtonTheme } from "@/shared/ui/Button/Button";
+import LeftIcon from "@/shared/assets/icons/move-left.svg";
+import RightIcon from "@/shared/assets/icons/move-right.svg";
 
 interface PaginationProps {
   className?: string;
@@ -32,13 +34,15 @@ export const Pagination = ({
         className={styles.prev_btn}
         disabled={currentPage === 1}
         onClick={() => onPaginate(currentPage - 1)}
+        theme={ButtonTheme.CIRCLE}
       >
-        Назад
+        <LeftIcon width={24} height={24} />
       </Button>
 
       <div className={styles.numbers_list}>
         {pageNumbers.map((pageNumber) => (
           <Button
+            theme={ButtonTheme.CIRCLE}
             color={
               pageNumber === currentPage
                 ? ButtonColor.SECONDARY
@@ -54,11 +58,12 @@ export const Pagination = ({
       </div>
 
       <Button
+        theme={ButtonTheme.CIRCLE}
         className={styles.next_btn}
         disabled={currentPage === pagesCount}
         onClick={() => onPaginate(currentPage + 1)}
       >
-        Вперед
+        <RightIcon width={24} height={24} />
       </Button>
     </div>
   );

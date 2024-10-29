@@ -14,7 +14,7 @@ export const metadata = {
 
 const ProfilePage = () => {
   return (
-    <div className={styles.page}>
+    <main className={styles.page}>
       <Reveal>
         <Heading>Профиль</Heading>
       </Reveal>
@@ -24,7 +24,7 @@ const ProfilePage = () => {
           <MiniRecipeBook className={styles.recipe_book} />
         </div>
       </Reveal>
-    </div>
+    </main>
   );
 };
 

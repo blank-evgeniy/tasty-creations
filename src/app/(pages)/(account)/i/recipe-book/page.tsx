@@ -11,9 +11,9 @@ export const metadata = {
 
 const RecipeBookPage = () => {
   return (
-    <div className={styles.page}>
+    <main className={styles.page}>
       <RecipeBook />
-    </div>
+    </main>
   );
 };
 

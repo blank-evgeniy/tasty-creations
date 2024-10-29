@@ -1,9 +1,11 @@
+@import "@/app/styles/mixins.scss";
+
 .page {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
 
-  margin: 32px 0;
+  margin: 32px 16px;
 }
 
 .img_container {
@@ -63,4 +65,18 @@
 .links {
   display: flex;
   gap: 12px;
+
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@include mediaTablet {
+  .page {
+    display: block;
+  }
+
+  .hero_image {
+    max-height: 50vh;
+    margin-bottom: 32px;
+  }
 }

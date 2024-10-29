@@ -83,6 +83,14 @@ export default function Home() {
                 <PersonIcon />
                 Blanke
               </AppLink>
+              <AppLink
+                withIcon
+                theme={LinkTheme.BUTTON}
+                href="https://lucide.dev/license"
+                target="_blank"
+              >
+                Lucide - icons
+              </AppLink>
             </div>
           </Reveal>
         </div>

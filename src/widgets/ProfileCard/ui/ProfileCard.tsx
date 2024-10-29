@@ -22,7 +22,9 @@ export const ProfileCard = ({ className }: ProfileCardProps) => {
         <div className={styles.avatar}>{firstLetter}</div>
 
         <p className={styles.username}>{user.username}</p>
-        <p>{isAdmin ? "администратор" : "кулинарный любитель"}</p>
+        <p className={styles.role}>
+          {isAdmin ? "администратор" : "кулинарный любитель"}
+        </p>
 
         <Button
           color={ButtonColor.SECONDARY}

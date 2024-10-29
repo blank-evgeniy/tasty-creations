@@ -1,18 +1,7 @@
-.recipes_list {
-  max-width: 800px;
+.recipes_list__loading {
   width: 100%;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  gap: 48px 32px;
-}
-
-.recipes_list__error {
-  max-width: 800px;
-  width: 100%;
-
-  padding-top: 32px;
+  padding: 32px 0;
 
   display: flex;
   justify-content: center;

@@ -32,7 +32,7 @@ const RecipePage = ({ className, recipeId }: RecipePageProps) => {
   const Icon = getClientIcon(icon);
 
   return (
-    <div className={classNames(styles.page, {}, [className])}>
+    <main className={classNames(styles.page, {}, [className])}>
       <Reveal>
         <Heading>
           <Icon className={styles.icon} height={24} width={24} />
@@ -80,7 +80,7 @@ const RecipePage = ({ className, recipeId }: RecipePageProps) => {
           <UpdateRecipeBookButton recipeId={recipeId} />
         </Reveal>
       </div>
-    </div>
+    </main>
   );
 };
 

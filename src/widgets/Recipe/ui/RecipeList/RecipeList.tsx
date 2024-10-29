@@ -15,7 +15,7 @@ interface RecipeListProps {
 export const RecipeList = ({ className, data, isLoading }: RecipeListProps) => {
   if (isLoading)
     return (
-      <div className={classNames(styles.recipes_list__error, {}, [className])}>
+      <div className={styles.recipes_list__loading}>
         <Loader />
       </div>
     );
@@ -23,7 +23,7 @@ export const RecipeList = ({ className, data, isLoading }: RecipeListProps) => {
   if (!data) return null;
 
   return (
-    <div className={classNames(styles.recipes_list, {}, [className])}>
+    <main className={classNames(styles.recipes_list, {}, [className])}>
       {data.map((recipe, index) => (
         //было решено задать key из индекса и id, чтобы происходили перерендеры
         //для анимации появления карточки
@@ -31,6 +31,6 @@ export const RecipeList = ({ className, data, isLoading }: RecipeListProps) => {
           <RecipeCard data={recipe} />
         </Reveal>
       ))}
-    </div>
+    </main>
   );
 };

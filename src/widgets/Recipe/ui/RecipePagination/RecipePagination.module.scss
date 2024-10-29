@@ -1,3 +1,5 @@
+@import "@/app/styles/mixins.scss";
+
 .content {
   margin: 32px 0;
 
@@ -13,6 +15,16 @@
   margin: 0 auto;
 }
 
+.recipe_list {
+  max-width: 800px;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 48px 32px;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -26,4 +38,31 @@
   color: var(--blue-color);
 
   margin-bottom: 16px;
+}
+
+@include mediaLaptop {
+  .content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .menu.without_category {
+    display: block;
+  }
+
+  .recipe_list {
+    max-width: none;
+  }
+}
+
+@include mediaTablet {
+  .recipe_list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }

@@ -1,13 +1,15 @@
+@import "@/app/styles/mixins.scss";
+
 .page {
   padding-bottom: var(--navbar-height);
 
-  margin: 32px 0;
+  margin: 32px 16px;
 }
 
 .wrapper {
   margin-top: 48px;
   display: flex;
-  gap: 64px;
+  gap: 32px;
 }
 
 .recipe_book {
@@ -17,4 +19,20 @@
 .profile {
   width: 100%;
   max-width: 320px;
+}
+
+@include mediaLaptop {
+  .wrapper {
+    gap: 16px;
+  }
+}
+
+@include mediaTablet {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .profile {
+    max-width: none;
+  }
 }

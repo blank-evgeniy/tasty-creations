@@ -1,3 +1,4 @@
+export { CategorySelect } from "./ui/CategorySelect/CategorySelect";
 export { CategoryListLite } from "./ui/CategoryListLite/CategoryListLite";
 export { categoryService } from "./api/categoryService";
 export { CategoryListHydration as CategoryList } from "./ui/CategoryList/CategoryListHydration";

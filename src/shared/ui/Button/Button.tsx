@@ -4,6 +4,7 @@ import styles from "./Button.module.scss";
 export enum ButtonTheme {
   DEFAULT = "default",
   CLEAR = "clear",
+  CIRCLE = "circle",
 }
 
 export enum ButtonSize {

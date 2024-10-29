@@ -5,12 +5,13 @@ import { Pagination } from "@/widgets/Pagination";
 import { useSearchParams } from "next/navigation";
 import { RecipeList } from "../RecipeList/RecipeList";
 import styles from "./RecipePagination.module.scss";
-import { CategoryListLite } from "@/entities/Category";
+import { CategorySelect } from "@/entities/Category";
 import { Reveal } from "@/shared/ui/Animation";
 import RecipeSortSelect from "../RecipeSortSelect/RecipeSortSelect";
 import { useQueryParams } from "@/shared/hooks/useQueryParams";
 import RecipeSearch from "../RecipeSearch/RecipeSearch";
 import { notFound } from "next/navigation";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface RecipePaginationProps {
   className?: string;
@@ -62,13 +63,21 @@ export const RecipePagination = ({
       </Reveal>
 
       <div className={styles.content}>
-        <RecipeList isLoading={isLoading} data={data?.recipes} />
+        <RecipeList
+          className={styles.recipe_list}
+          isLoading={isLoading}
+          data={data?.recipes}
+        />
         <Reveal delay={0.4}>
-          <div className={styles.menu}>
+          <aside
+            className={classNames(styles.menu, {
+              [styles.without_category]: !!category,
+            })}
+          >
             {!category && (
               <div className={styles.menu_categories}>
                 <h2 className={styles.menu_title}>Категории</h2>
-                <CategoryListLite />
+                <CategorySelect />
               </div>
             )}
 
@@ -76,7 +85,7 @@ export const RecipePagination = ({
               <h2 className={styles.menu_title}>Сортировка</h2>
               <RecipeSortSelect />
             </div>
-          </div>
+          </aside>
         </Reveal>
       </div>
 

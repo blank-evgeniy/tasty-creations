@@ -1,12 +1,14 @@
 @import "@/app/styles/mixins.scss";
 
 .page {
-  height: calc(100vh - var(--navbar-height));
+  min-height: calc(100vh - var(--navbar-height) - 32px);
   padding-bottom: var(--navbar-height);
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  margin: 16px;
 }
 
 .wrapper {

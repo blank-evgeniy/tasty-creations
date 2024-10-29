@@ -1,3 +1,5 @@
+@import "@/app/styles/mixins.scss";
+
 .page {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -5,7 +7,7 @@
   justify-content: center;
   column-gap: 32px;
 
-  margin: 32px 0;
+  margin: 32px 16px;
 }
 
 .img_container {
@@ -30,16 +32,23 @@
 }
 
 .categories_list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+
+  align-content: space-between;
+  justify-content: space-between;
+
   margin: 32px 0;
 }
 
 .link_section {
   padding-top: 16px;
   font-size: var(--font-size-l);
-}
 
-.button {
-  margin-left: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .button_content {
@@ -52,5 +61,34 @@
 .button:hover {
   .button_content {
     gap: 18px;
+  }
+}
+
+@include mediaLaptop {
+  .categories_list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@include mediaTablet {
+  .page {
+    display: flex;
+    flex-direction: column-reverse;
+
+    gap: 32px;
+  }
+
+  .hero_image {
+    max-height: 50vh;
+  }
+
+  .categories_list {
+    gap: 32px;
+  }
+}
+
+@include mediaPhone {
+  .categories_list {
+    gap: 16px;
   }
 }
