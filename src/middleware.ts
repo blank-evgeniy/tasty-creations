@@ -10,9 +10,10 @@ export function middleware(request: NextRequest) {
   const hasAuthToken = cookies.has(AUTH_TOKEN_COOKIE);
   const isAuthPage = url.includes("/auth");
 
+  const redirectResponse = NextResponse.redirect(new URL(PagesUrl.HOME, url));
+  redirectResponse.headers.set("x-middleware-cache", "no-cache");
+
   if (isAuthPage && hasAuthToken) {
-    const redirectResponse = NextResponse.redirect(new URL(PagesUrl.HOME, url));
-    redirectResponse.headers.set("x-middleware-cache", "no-cache");
     return redirectResponse;
   }
 
@@ -21,7 +22,7 @@ export function middleware(request: NextRequest) {
   }
 
   if (!hasAuthToken) {
-    return NextResponse.redirect(new URL(PagesUrl.HOME, url));
+    return redirectResponse;
   }
 }
 
