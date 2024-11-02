@@ -19,7 +19,7 @@ export const LoginForm = ({ className, onSwap }: LoginFormProps) => {
     formState: { errors },
   } = useForm<AuthForm>();
 
-  const { login } = useAuth();
+  const { login, isPending } = useAuth();
 
   const submit: SubmitHandler<AuthForm> = (data) => {
     login(data);
@@ -61,6 +61,8 @@ export const LoginForm = ({ className, onSwap }: LoginFormProps) => {
           color={ButtonColor.SECONDARY}
           className={styles.btn}
           type="submit"
+          loading={isPending}
+          disabled={isPending}
         >
           Войти
         </Button>

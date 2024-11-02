@@ -23,6 +23,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   color?: ButtonColor;
   withIcon?: boolean;
+  loading?: boolean;
 }
 
 const Button = ({
@@ -31,6 +32,7 @@ const Button = ({
   size = ButtonSize.M,
   color = ButtonColor.PRYMARY,
   withIcon = false,
+  loading = false,
   children,
   ...otherProps
 }: ButtonProps) => {
@@ -45,6 +47,7 @@ const Button = ({
       {...otherProps}
     >
       {children}
+      {loading && <span className={styles.loader}></span>}
     </button>
   );
 };

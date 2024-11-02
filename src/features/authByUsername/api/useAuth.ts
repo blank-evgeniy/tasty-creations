@@ -52,5 +52,6 @@ export const useAuth = () => {
     isLoading,
     login: loginMutation.mutate,
     logout: logoutMutation.mutate,
+    isPending: loginMutation.isPending || loginMutation.isPending,
   };
 };

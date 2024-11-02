@@ -7,19 +7,20 @@ import { PagesUrl } from "./app/config/pagesUrl";
 export function middleware(request: NextRequest) {
   const { url, cookies } = request;
 
-  const authToken = cookies.get(AUTH_TOKEN_COOKIE)?.value;
-
+  const hasAuthToken = cookies.has(AUTH_TOKEN_COOKIE);
   const isAuthPage = url.includes("/auth");
 
-  if (isAuthPage && authToken) {
-    return NextResponse.redirect(new URL(PagesUrl.HOME, url));
+  if (isAuthPage && hasAuthToken) {
+    const redirectResponse = NextResponse.redirect(new URL(PagesUrl.HOME, url));
+    redirectResponse.headers.set("x-middleware-cache", "no-cache");
+    return redirectResponse;
   }
 
   if (isAuthPage) {
     return NextResponse.next();
   }
 
-  if (!authToken) {
+  if (!hasAuthToken) {
     return NextResponse.redirect(new URL(PagesUrl.HOME, url));
   }
 }

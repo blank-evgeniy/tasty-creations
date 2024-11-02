@@ -26,7 +26,7 @@ export const RegistrationForm = ({
     reset,
   } = useForm<AuthForm>();
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationKey: ["register"],
     mutationFn: (data: AuthForm) => authService.main("register", data),
     onSuccess() {
@@ -109,6 +109,8 @@ export const RegistrationForm = ({
             onClick={onSwap}
             theme={ButtonTheme.CLEAR}
             type="button"
+            loading={isPending}
+            disabled={isPending}
           >
             войти
           </Button>
