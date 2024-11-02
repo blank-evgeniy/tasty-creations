@@ -21,7 +21,7 @@ export const useAuth = () => {
     retry: false,
   });
 
-  const { push } = useRouter();
+  const { push, refresh } = useRouter();
 
   const loginMutation = useMutation({
     mutationKey: ["login"],
@@ -40,8 +40,8 @@ export const useAuth = () => {
     mutationKey: ["logout"],
     mutationFn: () => authService.logout(),
     onSuccess: () => {
-      push(PagesUrl.HOME);
       queryClient.invalidateQueries({ queryKey: ["user"] });
+      refresh();
       toast("Вы успешно вышли из аккаунта");
     },
   });
