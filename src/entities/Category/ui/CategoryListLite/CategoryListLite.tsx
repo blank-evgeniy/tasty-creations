@@ -4,7 +4,7 @@ import styles from "./CategoryListLite.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { categoryService } from "@/entities/Category";
 import AppLink, { LinkSize } from "@/shared/ui/Link/AppLink";
-import { PagesUrl } from "@/app/config/pagesUrl";
+import { routes } from "@/app/config/routes";
 import Loader from "@/shared/ui/Loader/Loader";
 import { memo } from "react";
 
@@ -35,7 +35,7 @@ export const CategoryListLite = memo(function CategoryListLite({
         <AppLink
           key={category._id}
           size={LinkSize.L}
-          href={`${PagesUrl.RECIPES}/${category.path}`}
+          href={`${routes.PUBLIC.RECIPES}/${category.path}`}
         >
           {category.name}
         </AppLink>

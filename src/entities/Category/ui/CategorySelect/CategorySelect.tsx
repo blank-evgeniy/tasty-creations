@@ -4,7 +4,7 @@ import { memo, useCallback } from "react";
 import Select, { SingleValue } from "react-select";
 import { categoryService } from "../../api/categoryService";
 import { useQuery } from "@tanstack/react-query";
-import { PagesUrl } from "@/app/config/pagesUrl";
+import { routes } from "@/app/config/routes";
 
 interface RecipeSortSelectProps {
   className?: string;
@@ -28,7 +28,7 @@ export const CategorySelect = memo(function CategorySelect({
   const handleSelect = useCallback(
     (newValue: selectValue) => {
       if (newValue) {
-        router.push(`${PagesUrl.RECIPES}/${newValue.value}`);
+        router.push(`${routes.PUBLIC.RECIPES}/${newValue.value}`);
       } else {
         return;
       }

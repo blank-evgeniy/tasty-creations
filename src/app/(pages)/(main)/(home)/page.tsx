@@ -7,7 +7,7 @@ import AppLink, {
 } from "@/shared/ui/Link/AppLink";
 import GithubIcon from "@/shared/assets/icons/github.svg";
 import PersonIcon from "@/shared/assets/icons/circle-user-round.svg";
-import { PagesUrl } from "@/app/config/pagesUrl";
+import { routes } from "@/app/config/routes";
 import { Reveal, TextReveal } from "@/shared/ui/Animation";
 import Heading from "@/shared/ui/Heading/Heading";
 
@@ -56,7 +56,7 @@ export default function Home() {
               theme={LinkTheme.BUTTON}
               color={LinkColor.SECONDARY}
               size={LinkSize.L}
-              href={PagesUrl.CATEGORIES}
+              href={routes.PUBLIC.CATEGORIES}
             >
               Начать готовить!
             </AppLink>

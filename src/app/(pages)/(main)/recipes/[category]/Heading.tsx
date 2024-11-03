@@ -1,5 +1,5 @@
 "use client";
-import { PagesUrl } from "@/app/config/pagesUrl";
+import { routes } from "@/app/config/routes";
 import { categoryService } from "@/entities/Category";
 import Heading from "@/shared/ui/Heading/Heading";
 import { useQuery } from "@tanstack/react-query";
@@ -18,7 +18,7 @@ export const RecipesHeading = ({ path }: { path: string }) => {
   return (
     <Heading>
       <Link
-        href={PagesUrl.RECIPES}
+        href={routes.PUBLIC.RECIPES}
         style={{ color: "inherit", textDecoration: "underline" }}
       >
         Рецепты

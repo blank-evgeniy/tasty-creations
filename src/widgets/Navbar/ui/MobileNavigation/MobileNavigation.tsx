@@ -2,8 +2,7 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import NavLink from "../../../../shared/ui/NavLink/NavLink";
 import styles from "./MobileNavigation.module.scss";
-import { PagesUrl } from "@/app/config/pagesUrl";
-import { useAuth } from "@/features/authByUsername";
+import { routes } from "@/app/config/routes";
 import { useEffect, useState } from "react";
 import MenuIcon from "@/shared/assets/icons/menu.svg";
 import CloseIcon from "@/shared/assets/icons/x.svg";
@@ -11,28 +10,19 @@ import { AnimatePresence, motion } from "framer-motion";
 import AppLink, { LinkSize } from "@/shared/ui/Link/AppLink";
 import AppIcon from "@/shared/assets/icons/app-icon.svg";
 import { usePathname } from "next/navigation";
+import { NavigationLink } from "../../model/navbar";
 
 interface MobileNavigationProps {
   className?: string;
+  navLinks: NavigationLink[];
 }
 
-interface MobileNavigationLink {
-  href: PagesUrl;
-  title: string;
-}
-
-const NavLinks: MobileNavigationLink[] = [
-  { href: PagesUrl.CATEGORIES, title: "Категории" },
-  { href: PagesUrl.RECIPES, title: "Рецепты" },
-];
-
-const MobileNavigation = ({ className }: MobileNavigationProps) => {
-  const { user } = useAuth();
+const MobileNavigation = ({ className, navLinks }: MobileNavigationProps) => {
   const [isCollapse, setIsCollapse] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    setIsCollapse(false);
+    setIsCollapse(false); //при изменении текущего uri закрываем меню навигации
   }, [pathname]);
 
   return (
@@ -57,22 +47,17 @@ const MobileNavigation = ({ className }: MobileNavigationProps) => {
                 <AppLink
                   size={LinkSize.L}
                   className={styles.logo}
-                  href={PagesUrl.HOME}
+                  href={routes.PUBLIC.HOME}
                 >
                   <AppIcon />
                   Tasty Creations
                 </AppLink>
               </li>
-              {NavLinks.map((link) => (
+              {navLinks.map((link) => (
                 <li key={link.href}>
                   <NavLink href={link.href}>{link.title}</NavLink>
                 </li>
               ))}
-              {user && (
-                <li key={"book"}>
-                  <NavLink href={PagesUrl.RECIPE_BOOK}>Книга рецептов</NavLink>
-                </li>
-              )}
             </ul>
             <button
               className={styles.close_icon}

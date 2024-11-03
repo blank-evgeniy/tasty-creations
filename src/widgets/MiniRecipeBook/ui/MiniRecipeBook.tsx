@@ -2,7 +2,7 @@
 import { classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./MiniRecipeBook.module.scss";
 import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
-import { PagesUrl } from "@/app/config/pagesUrl";
+import { routes } from "@/app/config/routes";
 import { useQuery } from "@tanstack/react-query";
 import { recipeBookService } from "@/entities/RecipeBook";
 import { useAuth } from "@/features/authByUsername";
@@ -40,7 +40,7 @@ export const MiniRecipeBook = ({ className }: MiniRecipeBookProps) => {
               ))}
             </div>
             <AppLink
-              href={PagesUrl.RECIPE_BOOK}
+              href={routes.PRIVATE.RECIPE_BOOK}
               theme={LinkTheme.BUTTON}
               className={styles.button}
             >
@@ -57,7 +57,7 @@ export const MiniRecipeBook = ({ className }: MiniRecipeBookProps) => {
             <AppLink
               className={styles.button}
               theme={LinkTheme.BUTTON}
-              href={PagesUrl.RECIPES}
+              href={routes.PUBLIC.RECIPES}
             >
               Все рецепты
             </AppLink>

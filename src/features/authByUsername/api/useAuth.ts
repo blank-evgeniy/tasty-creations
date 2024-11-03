@@ -4,8 +4,8 @@ import Cookies from "js-cookie";
 import { AUTH_TOKEN_COOKIE } from "@/shared/consts/consts";
 import { AuthForm } from "../model/authType";
 import { useRouter } from "next/navigation";
-import { PagesUrl } from "@/app/config/pagesUrl";
 import { toast } from "sonner";
+import { routes } from "@/app/config/routes";
 
 export const useAuth = () => {
   const queryClient = useQueryClient();
@@ -28,7 +28,7 @@ export const useAuth = () => {
     mutationFn: (data: AuthForm) => authService.main("login", data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["user"] });
-      push(PagesUrl.HOME);
+      push(routes.PUBLIC.HOME);
       toast("Вы успешно вошли в аккаунт");
     },
     onError: () => {

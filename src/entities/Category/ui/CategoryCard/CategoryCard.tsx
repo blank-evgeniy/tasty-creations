@@ -5,7 +5,7 @@ import { Noto_Serif } from "next/font/google";
 import { getClientIcon } from "@/shared/ui/ClientIcon";
 
 import styles from "./CategoryCard.module.scss";
-import { PagesUrl } from "@/app/config/pagesUrl";
+import { routes } from "@/app/config/routes";
 
 const noto = Noto_Serif({ weight: "500", subsets: ["cyrillic"] });
 
@@ -20,7 +20,7 @@ export const CategoryCard = ({ className, data }: CategoryCardProps) => {
   const Icon = getClientIcon(icon);
 
   return (
-    <Link href={`${PagesUrl.RECIPES}/${path}`}>
+    <Link href={`${routes.PUBLIC.RECIPES}/${path}`}>
       <div className={classNames(styles.card, {}, [className, noto.className])}>
         <Icon width={100} height={100} className={styles.image} />
         <div className={styles.card__content}>

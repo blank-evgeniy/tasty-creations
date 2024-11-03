@@ -3,7 +3,7 @@ import Image from "next/image";
 import HeroImage from "@/shared/assets/pictures/hero2.jpg";
 import AppLink, { LinkTheme } from "@/shared/ui/Link/AppLink";
 import MoveRightIcon from "@/shared/assets/icons/move-right.svg";
-import { PagesUrl } from "@/app/config/pagesUrl";
+import { routes } from "@/app/config/routes";
 import { Reveal } from "@/shared/ui/Animation";
 import Heading from "@/shared/ui/Heading/Heading";
 import { CategoryList } from "@/entities/Category";
@@ -36,7 +36,7 @@ export default function Categories() {
             </h2>
 
             <AppLink
-              href={PagesUrl.RECIPES}
+              href={routes.PUBLIC.RECIPES}
               theme={LinkTheme.BUTTON}
               className={styles.button}
             >
