@@ -12,7 +12,7 @@ interface CategoryListProps {
 
 const CategoryList = ({ className }: CategoryListProps) => {
   const { data, error, isLoading } = useQuery({
-    queryKey: ["categories"],
+    queryKey: ["categories-wait"],
     queryFn: () => categoryService.getAllCategories(),
     staleTime: 5 * 1000 * 60,
   });

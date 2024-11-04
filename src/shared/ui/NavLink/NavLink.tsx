@@ -14,7 +14,7 @@ const NavLink = ({ className, href, children }: NavLinkProps) => {
   const pathname = usePathname();
 
   const mods = {
-    [styles.active]: pathname === href,
+    [styles.active]: pathname.startsWith(href),
   };
 
   return (
