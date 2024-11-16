@@ -1,10 +1,11 @@
 # Tasty Creations - веб-приложение о рецептах на Next.js
 
 ### Деплой сайта: https://tasty-creations-coral.vercel.app/
+```diff 
+- первая загрузка данных с сервера может длиться около минуты в связи с использованием бесплатного хостинга для бэкенда
+```
 
-**Первый запрос на сервер может длиться около минуты в связи с использованием бесплатного хостинга для бэкенда**
-
-### API разработанный мною на Expresse.js, MongoDB: https://github.com/blank-evgeniy/tasty-creations-backend
+### API разработанный мною на Express.js, MongoDB: https://github.com/blank-evgeniy/tasty-creations-backend
 
 ![tasty-creations-coral vercel app_(Nest Hub Max) (1)](https://github.com/user-attachments/assets/344532ce-7476-4c47-81c4-8cf02ef0d69a)
 
