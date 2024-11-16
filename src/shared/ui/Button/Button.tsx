@@ -47,7 +47,7 @@ const Button = ({
       {...otherProps}
     >
       {children}
-      {loading && <span className={styles.loader}></span>}
+      {loading && <span data-testid="loader" className={styles.loader}></span>}
     </button>
   );
 };

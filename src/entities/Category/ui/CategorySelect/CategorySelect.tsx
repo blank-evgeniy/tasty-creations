@@ -21,7 +21,7 @@ export const CategorySelect = memo(function CategorySelect({
   const router = useRouter();
 
   const { data, isLoading } = useQuery({
-    queryKey: ["categories"],
+    queryKey: ["categories-wait"],
     queryFn: () => categoryService.getAllCategories(),
   });
 

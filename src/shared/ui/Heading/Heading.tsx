@@ -13,6 +13,7 @@ interface HeadingProps {
 const Heading = ({ className, children }: HeadingProps) => {
   return (
     <h1
+      role="heading"
       className={classNames(styles.heading, {}, [
         className,
         merriweather.className,
